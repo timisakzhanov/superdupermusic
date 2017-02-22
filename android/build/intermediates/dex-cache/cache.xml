@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/tim_isakjanov/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0-381c6a07ed42956cb587ffcd758bd379909ac0c0.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/classes-a110a15ada078f1045e6de89a537d0b83512654a.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/okhttp-3.4.1-cb640336d4cd9a3035d886f67f490ed95ad0ce8b.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/f824591a0016efbaeddb8300bee54832a1398cfa/okio-1.9.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/okio-1.9.0-5870bbd001fdc379d6f27e9be6c88fc38dc71a8b.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1137942adeb03984c1311b662363dd38fc238fd3">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/classes-c9ec757787127e6de5a8f5689595be224363990b.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0-646ad596a7bf8f0b972842657ea0a441bb1d3bff.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/classes-17005a2a7eab16aa72e47b5a48fb2dc0ddac754c.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.spotify.sdk/spotify-auth-1.0.0-beta12/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5ae103bc312bb16fa0e04b4b50af27c0ad7eb987">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/classes-173db448aeee53657dfc0d5acb19973da66bb5e5.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ca63c521b5745ae9a09629d7ca67ff6bc2a967fe">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/classes-21237b7b999307e147d2ca25052adce531c9c911.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.4.0-ac0ae64179160435dac6ac7cadb6612ee052932a.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/classes-ca863095744bbdbdd58d9220e170cd41febc8757.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0-d114c1b86f659794c5f0a8f7269977b08298290a.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.4.1/63994437f62bc861bc20c605d12962f7246116d1/okhttp-urlconnection-3.4.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="63994437f62bc861bc20c605d12962f7246116d1">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.4.1-324dd80b6c04f03ba2ee4981bb84e1a71f381570.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="98786c1770b531b9194fb6448b2a2692c64074b6">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/classes-e40378eb7d0bcd1a9d705711e3555b60a6b31110.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/javax.inject-1-cc6e841694d2f8985397163f466640bf436ab3d9.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.41.2/jars/libs/infer-annotations-1.5.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="dcac634e137395f79693ec760f081a86eb2bd84e">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/infer-annotations-1.5-ea3f8254181b149103c00c99234a6e81a32a86fe.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3341b66c54367e777a0647e2db96c045329bfeab">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/classes-33f598dc89394db68d4c7cba79d7e4fd3cc2e63f.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.41.2/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b49a04a3016689b372ecbb77f0c33e486e768cca">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/classes-a296d5a6085dfe0af7cc90a28cc8a57a2c55b164.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/classes-70cd383b2ad65ad3a6ba25907b8c63aa8f88693e.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-ws/3.4.1/8ace66ef7002d98f633377c9e67daeeb196d8c3b/okhttp-ws-3.4.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8ace66ef7002d98f633377c9e67daeeb196d8c3b">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/okhttp-ws-3.4.1-91b3bb1c367921b2b7b3864d5c0d292eb2971b22.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/library-2.4.0-34f1ba63b841cbce469d392384f93c92a70d4719.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2b8a01ad9da5d26d0067894c22e87597bca2c500">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/classes-a308068afd24463a4f01777405377b8e66d6d946.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/classes-7ff55a564bad9290fc976bb6be6a89e1f30ed875.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d31aadf33187c37a7cd63dc1b769f8c6e33f78c3">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/classes-34c6daf048834607844dc1c5555d708883e87e3d.jar" />
+    </item>
+    <item
+        jar="/Users/tim_isakjanov/Libraries/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.4.0-2e84a3d5865f1c4ee3d55da3c47573b2182f91bb.jar" />
+    </item>
+
+</items>
