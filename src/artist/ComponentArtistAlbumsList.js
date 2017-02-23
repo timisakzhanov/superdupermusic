@@ -32,7 +32,9 @@ export default class ComponentArtistAlbumsList extends Component {
   }
 
   renderAlbumItem(album) {
-    return <Image source={{uri: album.images[1].url}} style={styles.album}/>
+    return <Image source={{uri: album.images[1].url}} style={styles.album}>
+              <Text style={styles.name}>{album.name}</Text>
+           </Image>
   }
 
   displayProgress() {
@@ -63,6 +65,17 @@ const styles = StyleSheet.create({
   album:  {
     flex: 1,
     height: 150
+  },
+  name: {
+    position: 'absolute',
+    bottom: 0,
+    marginLeft: 8,
+    marginBottom: 8,
+    fontSize: 16,
+    color: '#ffffff',
+    textShadowColor:'#585858',
+    textShadowOffset:{width: 2, height: 2},
+    textShadowRadius:5,
   }
 })
 
