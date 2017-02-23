@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import ComponentResults from './ComponentResults'
-import { fetchArtists } from './ActionsResults'
+import { fetchArtists, selectArtist } from './ActionsResults'
 
 
 const mapStateToProps = (state) => {
@@ -17,6 +17,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onSceneCreated: (spotifyApi, query) => {
       dispatch(fetchArtists(spotifyApi, query))
+    },
+
+    onArtistSelected: (artist) => {
+      dispatch(selectArtist(artist))
     }
   }
 }

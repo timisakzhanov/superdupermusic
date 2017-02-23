@@ -3,7 +3,8 @@ import {
   StyleSheet,
   View,
   Text,
-  Image
+  Image,
+  TouchableHighlight
 } from 'react-native'
 
 export default class ComponentResultsArtist extends Component {
@@ -15,13 +16,15 @@ export default class ComponentResultsArtist extends Component {
 
   render() {
     return (
-      <View style={{flexDirection: 'row', height: 72, marginTop: 8, alignItems: 'center'}}>
-        <Image
-          style={{backgroundColor: '#E0E0E0', width: 72, height: 72, marginLeft: 8}}
-          source={{uri: this.image == null ? null : this.image.url}}
-        />
-        <Text style={styles.artistName}>{this.props.artist.name}</Text>
-      </View>
+      <TouchableHighlight onPress={() => this.props.onRowClicked(this.props.artist)}>
+        <View style={{flexDirection: 'row', height: 72, marginTop: 8, alignItems: 'center'}}>
+          <Image
+            style={{backgroundColor: '#E0E0E0', width: 72, height: 72, marginLeft: 8}}
+            source={{uri: this.image == null ? null : this.image.url}}
+          />
+          <Text style={styles.artistName}>{this.props.artist.name}</Text>
+        </View>
+      </TouchableHighlight>
     )
   }
 }
@@ -34,5 +37,6 @@ const styles = StyleSheet.create({
 });
 
 ComponentResultsArtist.propTypes = {
-  artist: PropTypes.object.isRequired
+  artist: PropTypes.object.isRequired,
+  onRowClicked: PropTypes.func.isRequired
 }
