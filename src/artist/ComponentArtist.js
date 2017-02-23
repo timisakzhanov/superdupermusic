@@ -5,11 +5,13 @@ import {
   Text
 } from 'react-native'
 
+import ContainerArtistInfo from './ContainerArtistInfo'
+
 export default class ComponentArtist extends Component {
   render() {
     return (
       <View style={styles.container}>
-      <Text style={{ fontSize: 20, marginTop: 50 }}>Artists screen</Text>
+        <ContainerArtistInfo />
       </View>
     )
   }
@@ -18,13 +20,6 @@ export default class ComponentArtist extends Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#dedede',
-    flex: 1,
-    paddingLeft: 8,
-    paddingRight: 8
+    flex: 1
   }
 });
-
-
-ComponentArtist.propTypes = {
-  artist: React.PropTypes.object.isRequired
-}
