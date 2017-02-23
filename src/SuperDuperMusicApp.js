@@ -35,6 +35,9 @@ import { updateSearchQuery } from './search/ActionsSearch'
 import { setToken } from './ActionsApp'
 
 
+import Routes from './routes'
+
+
 let store = createStore(
   rootReducer,
   applyMiddleware(thunk)
@@ -68,7 +71,7 @@ export default class SuperDuperMusicApp extends Component {
     return (
       <Provider store={store} >
         <Navigator
-          initialRoute={{ name: 'Search' }}
+          initialRoute={{ name: Routes.search }}
           renderScene={ this.renderScene.bind(this) }
           configureScene={(route, routeStack) => TRANSITION_NONE}
         />
@@ -82,19 +85,19 @@ export default class SuperDuperMusicApp extends Component {
 
   renderScene(route, navigator) {
     this.navigator = navigator;
-    if (route.name == 'Search') {
+    if (route.name == Routes.search) {
       return <ComponentSearch
-                onSearchClick={()=>this.navigate()}
+                onSearchClick={(route)=>this.navigate(route)}
                 onLogoutClick={()=>this.logout()}/>
     }
-    if (route.name == 'Results') {
+    if (route.name == Routes.results) {
       return <ContainerResults />
     }
   }
 
-  navigate() {
+  navigate(route) {
     this.navigator.push({
-      name: 'Results',
+      name: route,
     })
   }
 
