@@ -17,9 +17,23 @@ export default class ComponentArtistAlbumsList extends Component {
   render() {
     return(
       <View>
-        <Text>Albums list</Text>
+        { this.displayProgress() }
+        { this.displayError() }
+        { console.log(this.props.albums)}
       </View>
     )
+  }
+
+  displayProgress() {
+    if (this.props.isAlbumsFetching) {
+      return <Text>Loading...</Text>
+    }
+  }
+
+  displayError() {
+    if (this.props.albumsFetchingError !== '') {
+      return <Text>Error: {this.props.albumsFetchingError}</Text>
+    }
   }
 
   componentDidMount() {
@@ -30,5 +44,8 @@ export default class ComponentArtistAlbumsList extends Component {
 ComponentArtistAlbumsList.propTypes = {
   authToken: React.PropTypes.string.isRequired,
   artistId: React.PropTypes.string.isRequired,
+  isAlbumsFetching: React.PropTypes.bool.isRequired,
+  albumsFetchingError: React.PropTypes.string.isRequired,
+  albums: React.PropTypes.array.isRequired,
   onAlbumsLayoutDisplayed: React.PropTypes.func.isRequired
 }

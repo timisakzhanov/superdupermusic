@@ -2,9 +2,9 @@ export const fetchArtists = (spotifyApi, query) => {
   return function(dispatch) {
     dispatch(startFetchProcess())
     return fetchArtistsList(spotifyApi, query)
-      .then( (response) => response.json())
-      .then( (json) => dispatch(fetchArtistsSuccess(json)))
-      .catch( (error) => dispatch(fetchArtistsError(error)))
+      .then((response) => response.json())
+      .then((json) => dispatch(fetchArtistsSuccess(json)))
+      .catch((error) => dispatch(fetchArtistsError(error)))
   }
 }
 

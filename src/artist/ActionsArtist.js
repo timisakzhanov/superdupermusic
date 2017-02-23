@@ -6,6 +6,9 @@ export const fetchArtistAlbums = (spotifyApi, artistId) => {
   return function(dispatch) {
     dispatch(startFetchAlbums())
     return fetchAlbums(spotifyApi, artistId)
+      .then((response) => response.json())
+      .then((json) => dispatch(fetchAlbumsSuccess(json)))
+      .catch((error) => dispatch(fetchAlbumsError(error)))
   }
 }
 
@@ -18,9 +21,9 @@ export const fetchAlbumsError = (error) => {
 }
 
 export const fetchAlbumsSuccess = (json) =>  {
-  return { type: 'FETCH_ALBUMS_SUCCESS', albums: json }
+  return { type: 'FETCH_ALBUMS_SUCCESS', albums: json.items }
 }
 
 function fetchAlbums(spotifyApi, artistId) {
-  spotifyApi.fetchArtistsAlbums(artistId)
+  return spotifyApi.fetchArtistsAlbums(artistId)
 }
