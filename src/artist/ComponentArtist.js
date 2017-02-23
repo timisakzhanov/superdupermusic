@@ -6,12 +6,14 @@ import {
 } from 'react-native'
 
 import ContainerArtistInfo from './ContainerArtistInfo'
+import ContainerArtistAlbumsList from './ContainerArtistAlbumsList'
 
 export default class ComponentArtist extends Component {
   render() {
     return (
       <View style={styles.container}>
         <ContainerArtistInfo />
+        <ContainerArtistAlbumsList />
       </View>
     )
   }
