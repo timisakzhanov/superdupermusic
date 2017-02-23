@@ -2,9 +2,10 @@ import React, { Component, PropTypes } from 'react'
 import {
   StyleSheet,
   View,
-  Text
+  Text,
+  Image
 } from 'react-native'
-
+import GridView from 'react-native-grid-view'
 import SpotifyApi from '../resources/SpotifyApi'
 
 
@@ -16,11 +17,22 @@ export default class ComponentArtistAlbumsList extends Component {
 
   render() {
     return(
-      <View>
+      <View style={ styles.container }>
         { this.displayProgress() }
         { this.displayError() }
+
+        <GridView
+          items={this.props.albums}
+          itemsPerRow={2}
+          renderItem={this.renderAlbumItem}
+          style={ styles.gridView }
+        />
       </View>
     )
+  }
+
+  renderAlbumItem(album) {
+    return <Image source={{uri: album.images[1].url}} style={styles.album}/>
   }
 
   displayProgress() {
@@ -39,6 +51,20 @@ export default class ComponentArtistAlbumsList extends Component {
     this.props.onAlbumsLayoutDisplayed(this.spotifyApi, this.props.artistId)
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#64B5F6'
+  },
+  gridView: {
+    backgroundColor: '#AB47BC'
+  },
+  album:  {
+    flex: 1,
+    height: 150
+  }
+})
 
 ComponentArtistAlbumsList.propTypes = {
   authToken: React.PropTypes.string.isRequired,
