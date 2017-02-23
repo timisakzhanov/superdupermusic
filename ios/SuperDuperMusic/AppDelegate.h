@@ -9,7 +9,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import <SpotifyAuthentication/SpotifyAuthentication.h>
+#import <SpotifyAudioPlayback/SpotifyAudioPlayback.h>
+#import <SafariServices/SafariServices.h>
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate, SPTAudioStreamingDelegate>
 
 @property (nonatomic, strong) UIWindow *window;
 
