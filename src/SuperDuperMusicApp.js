@@ -84,21 +84,21 @@ export default class SuperDuperMusicApp extends Component {
     this.navigator = navigator;
     if (route.name == 'Search') {
       return <ComponentSearch
-                onSearchClick={()=>this._navigate()}
-                onLogoutClick={()=>this._logout()}/>
+                onSearchClick={()=>this.navigate()}
+                onLogoutClick={()=>this.logout()}/>
     }
     if (route.name == 'Results') {
       return <ContainerResults />
     }
   }
 
-  _navigate() {
+  navigate() {
     this.navigator.push({
       name: 'Results',
     })
   }
 
-  _logout() {
+  logout() {
     SpotifyAuthModuleAndroid.logOut();
   }
 
