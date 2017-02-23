@@ -19,7 +19,6 @@ export default class ComponentArtistAlbumsList extends Component {
       <View>
         { this.displayProgress() }
         { this.displayError() }
-        { console.log(this.props.albums)}
       </View>
     )
   }
