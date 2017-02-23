@@ -11,7 +11,6 @@ import ContainerSearchQueryInput from './ContainerSearchQueryInput'
 
 import SpotifyAuthModuleAndroid from '../nativeModules/SpotifyAuthModuleAndroid'
 
-import Routes from '../routes'
 
 export default class ComponentSearch extends Component {
   render() {
@@ -19,7 +18,7 @@ export default class ComponentSearch extends Component {
       <View style={styles.container}>
         <ComponentSearchHeader text='Look for your favorites artists'/>
 
-        <ContainerSearchQueryInput placeholder='Artist name' onRouteUpdated={()=>this.props.onSearchClick(Routes.results)} />
+        <ContainerSearchQueryInput placeholder='Artist name' onRouteUpdated={()=>this.props.onSearchClick()} />
 
         <TouchableHighlight onPress={ this.props.onLogoutClick }>
           <Text style={{ fontSize: 20, marginTop: 50 }}>Log out</Text>

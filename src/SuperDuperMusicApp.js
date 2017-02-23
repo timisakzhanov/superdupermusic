@@ -15,10 +15,11 @@ import SpotifyAuthModuleAndroid from './nativeModules/SpotifyAuthModuleAndroid'
 
 
 /**
- *  Import presentational components
+ *  Import components
  */
 import ContainerResults from './results/ContainerResults'
 import ComponentSearch from './search/ComponentSearch'
+import ComponentArtist from './artist/ComponentArtist'
 import buildStyleInterpolator from 'react-native/Libraries/Utilities/buildStyleInterpolator'
 
 
@@ -84,14 +85,20 @@ export default class SuperDuperMusicApp extends Component {
   }
 
   renderScene(route, navigator) {
-    this.navigator = navigator;
+    if (this.navigator == null) {
+      this.navigator = navigator
+    }
     if (route.name == Routes.search) {
       return <ComponentSearch
-                onSearchClick={(route)=>this.navigate(route)}
-                onLogoutClick={()=>this.logout()}/>
+                onSearchClick={() => this.navigate(Routes.results)}
+                onLogoutClick={() => this.logout()}/>
     }
     if (route.name == Routes.results) {
-      return <ContainerResults />
+      return <ContainerResults
+                onSetArtistRoute={() => this.navigate(Routes.artist)}/>
+    }
+    if (route.name == Routes.artist) {
+      return <ComponentArtist />
     }
   }
 

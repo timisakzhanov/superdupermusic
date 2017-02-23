@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import query from './search/ReducersSearch'
 import artists from './results/ReducersResults'
+import artist from './artist/ReducersArtist'
 
 const token = (state = '', action) => {
   switch (action.type) {
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
   token,
   route,
   query,
-  artists
+  artists,
+  artist
 })
 
 export default rootReducer

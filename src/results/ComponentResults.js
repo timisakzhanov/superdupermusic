@@ -30,10 +30,18 @@ export default class ComponentResults extends Component {
         { this.drawError() }
         <ListView
           dataSource={dataSource}
-          renderRow={(rowData) => <ComponentResultsArtist artist={rowData} />}
+          renderRow={
+            (rowData) =>
+              <ComponentResultsArtist artist={rowData} onRowClicked={(artist) => this.processOnRowClicked(artist)}/>
+          }
         />
       </View>
     );
+  }
+
+  processOnRowClicked(artist) {
+    this.props.onArtistSelected(artist)
+    this.props.onSetArtistRoute()    
   }
 
   componentDidMount() {
@@ -59,5 +67,7 @@ ComponentResults.propTypes = {
   artists: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
   error: PropTypes.string.isRequired,
-  onSceneCreated: PropTypes.func.isRequired
+  onSceneCreated: PropTypes.func.isRequired,
+  onSetArtistRoute: PropTypes.func.isRequired,
+  onArtistSelected: PropTypes.func.isRequired
 }
