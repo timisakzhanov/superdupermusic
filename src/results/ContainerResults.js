@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import ComponentResults from './ComponentResults'
-import { fetchArtists, selectArtist } from './ActionsResults'
+import { fetchArtists } from './ActionsResults'
+import { selectArtist } from '../artist/ActionsArtist'
 
 
 const mapStateToProps = (state) => {

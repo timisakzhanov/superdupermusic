@@ -20,10 +20,6 @@ export const fetchArtistsSuccess = (json) =>  {
   return { type: 'RESULTS_FETCH_ARTISTS_SUCCESS', artists: json.artists.items }
 }
 
-export const selectArtist = (artistObj) => {
-  return { type: 'RESULTS_SELECT_ARTIST', artist: artistObj }
-}
-
 
 function fetchArtistsList(spotifyApi, query) {
   return spotifyApi.searchArtists(query)
