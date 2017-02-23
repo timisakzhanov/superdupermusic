@@ -22,8 +22,12 @@ export default class ComponentSearchQueryInput extends Component {
           }} />
 
           <TouchableHighlight onPress={()=>{
-            this.props.onSearchClick(this.query),
-            this.props.onRouteUpdated()
+            if (this.query != null && this.query !== '') {
+              this.props.onSearchClick(this.query),
+              this.props.onRouteUpdated()
+            } else {
+              //ask user to fill input
+            }
           }}>
             <Text style={{ fontSize: 20 }}>Search</Text>
           </TouchableHighlight>

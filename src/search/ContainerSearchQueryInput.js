@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSearchClick: (query) => {
+    onSearchClick: (query = '') => {
       dispatch(updateSearchQuery(query))
     }
   }
