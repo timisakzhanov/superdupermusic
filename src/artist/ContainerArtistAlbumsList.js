@@ -4,7 +4,7 @@ import { fetchArtistAlbums } from './ActionsArtist'
 
 const mapStateToProps = (state) => {
   return {
-    authToken: state.token,
+    authToken: state.auth.token,
     artistId: state.artist.item.id,
     isAlbumsFetching: state.artist.isAlbumsFetching,
     albumsFetchingError: state.artist.albumsFetchingError,

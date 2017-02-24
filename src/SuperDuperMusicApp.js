@@ -9,14 +9,9 @@ import thunk from 'redux-thunk'
 
 
 /**
- *  Import native modules
- */
-import SpotifyAuthModuleAndroid from './nativeModules/SpotifyAuthModuleAndroid'
-
-
-/**
  *  Import components
  */
+import ContainerAuthorization from './authorization/ContainerAuthorization'
 import ContainerResults from './results/ContainerResults'
 import ComponentSearch from './search/ComponentSearch'
 import ComponentArtist from './artist/ComponentArtist'
@@ -33,7 +28,7 @@ import rootReducer from './ReducersApp'
  *  Import actions
  */
 import { updateSearchQuery } from './search/ActionsSearch'
-import { setToken } from './ActionsApp'
+import { setToken } from './authorization/ActionsAuthorization'
 
 
 import Routes from './routes'
@@ -72,7 +67,7 @@ export default class SuperDuperMusicApp extends Component {
     return (
       <Provider store={store} >
         <Navigator
-          initialRoute={{ name: Routes.search }}
+          initialRoute={{ name: Routes.login }}
           renderScene={ this.renderScene.bind(this) }
           configureScene={(route, routeStack) => TRANSITION_NONE}
         />
@@ -80,13 +75,13 @@ export default class SuperDuperMusicApp extends Component {
     )
   }
 
-  componentDidMount() {
-    this.startAuthProcess()
-  }
-
   renderScene(route, navigator) {
     if (this.navigator == null) {
       this.navigator = navigator
+    }
+    if (route.name == Routes.login) {
+      return <ContainerAuthorization
+                onAuthComplited={() => this.navigate(Routes.search)} />
     }
     if (route.name == Routes.search) {
       return <ComponentSearch
@@ -109,20 +104,19 @@ export default class SuperDuperMusicApp extends Component {
   }
 
   logout() {
-    SpotifyAuthModuleAndroid.logOut();
-  }
-
-  startAuthProcess() {
-    SpotifyAuthModuleAndroid.startAuthProcess(
-      (msg)=>{console.log("error: " + msg)},
-      (token)=>AsyncStorage.setItem('authToken', token)
-    )
+    //SpotifyAuthModuleAndroid.logOut();
+    AsyncStorage.removeItem('authToken')
   }
 
   getLocalAuthToken() {
     AsyncStorage.getItem('authToken')
       .then((value) => {
+        if (!value) {
+          this.navigate(Routes.login)
+          return
+        }
         store.dispatch(setToken(value))
+        this.navigate(Routes.search)
       })
   }
 }

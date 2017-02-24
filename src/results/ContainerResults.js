@@ -6,7 +6,7 @@ import { selectArtist } from '../artist/ActionsArtist'
 
 const mapStateToProps = (state) => {
   return {
-    authToken: state.token,
+    authToken: state.auth.token,
     query: state.query,
     artists: state.artists.items,
     isFetching: state.artists.isFetching,

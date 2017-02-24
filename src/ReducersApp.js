@@ -2,15 +2,7 @@ import { combineReducers } from 'redux'
 import query from './search/ReducersSearch'
 import artists from './results/ReducersResults'
 import artist from './artist/ReducersArtist'
-
-const token = (state = '', action) => {
-  switch (action.type) {
-    case 'UPDATE_TOKEN':
-      return action.token
-    default:
-      return state
-  }
-}
+import auth from './authorization/ReducersAuthorization'
 
 const route = (state = '', action) => {
   switch (action.type) {
@@ -22,7 +14,7 @@ const route = (state = '', action) => {
 }
 
 const rootReducer = combineReducers({
-  token,
+  auth,
   route,
   query,
   artists,
