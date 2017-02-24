@@ -2,18 +2,27 @@ import React, { Component, PropTypes } from 'react'
 import {
   StyleSheet,
   AsyncStorage,
+  Dimensions,
   View,
   Text,
+  Image,
 } from 'react-native'
 
 import SpotifyAuthModuleAndroid from '../nativeModules/SpotifyAuthModuleAndroid'
 
 export default class ComponentAuthorization extends Component {
   render() {
+
     return (
-      <View style={styles.container}>
-        <Text style={styles.text}>This is login form, welcome!</Text>
-        <Text style={styles.button} onPress={()=>this.startAuthProcess()}>Login</Text>
+      <View style={styles.container} >
+        <Image source={require('../res/img/background.png')} style={styles.background} />
+
+        <View style={styles.login_container}>
+          <Text style={styles.text}>
+            Get instant access to millions of songs - from old favorites to the latest hits.
+          </Text>
+          <Text style={styles.button} onPress={()=>this.startAuthProcess()}>Log in</Text>
+        </View>
         {this.displayError()}
       </View>
     )
@@ -39,26 +48,54 @@ export default class ComponentAuthorization extends Component {
   }
 }
 
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+
+  },
+  background: {
+    position: 'absolute',
+    top: 0, bottom: 0, left: 0, right: 0,
+    width: windowWidth,
+    height: windowHeight,
+    resizeMode: "stretch"
+  },
+  login_container: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   text: {
-    fontSize: 30,
-    marginTop: 50
+    color: '#ffffff',
+    fontSize: 18,
+    lineHeight: 30,
+    alignSelf: 'stretch',
+    textAlign: 'center',
+    marginLeft: 30,
+    marginRight: 30,
+    marginBottom: 45
   },
   button: {
-    marginTop: 40,
-    paddingLeft: 40,
-    paddingTop: 10,
-    paddingRight: 40,
-    paddingBottom: 10,
-    fontSize: 20,
+    marginLeft: 30,
+    marginRight: 30,
+    marginBottom: 50,
+    paddingTop: 15,
+    paddingBottom: 15,
+    borderRadius:50,
+    fontSize: 24,
     color: '#ffffff',
-    backgroundColor: '#00E676'
+    alignSelf: 'stretch',
+    textAlign: 'center',
+    backgroundColor: '#ff245a',
   },
   error: {
     position: 'absolute',
