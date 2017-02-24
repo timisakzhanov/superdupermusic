@@ -14,6 +14,7 @@ export default class ComponentAuthorization extends Component {
       <View style={styles.container}>
         <Text style={styles.text}>This is login form, welcome!</Text>
         <Text style={styles.button} onPress={()=>this.startAuthProcess()}>Login</Text>
+        {this.displayError()}
       </View>
     )
   }
@@ -21,7 +22,7 @@ export default class ComponentAuthorization extends Component {
   startAuthProcess() {
     SpotifyAuthModuleAndroid.startAuthProcess(
       (error)=>{
-        this.props.onAuthError(error)
+        this.props.onAuthError("Failed to login")
       },
       (token)=>{
         this.props.onTokenReceived(token)
@@ -31,6 +32,11 @@ export default class ComponentAuthorization extends Component {
     )
   }
 
+  displayError() {
+      if (this.props.error !== '') {
+        return <Text style={styles.error}>{this.props.error}</Text>
+      }
+  }
 }
 
 const styles = StyleSheet.create({
@@ -53,10 +59,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: '#ffffff',
     backgroundColor: '#00E676'
+  },
+  error: {
+    position: 'absolute',
+    bottom: 30,
   }
 })
 
 ComponentAuthorization.propTypes = {
+  error: React.PropTypes.string.isRequired,
   onTokenReceived: React.PropTypes.func.isRequired,
   onAuthComplited: React.PropTypes.func.isRequired,
   onAuthError: React.PropTypes.func.isRequired
