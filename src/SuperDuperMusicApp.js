@@ -32,6 +32,7 @@ import { setToken } from './authorization/ActionsAuthorization'
 
 
 import Routes from './routes'
+import SpotifyAuthModuleAndroid from './nativeModules/SpotifyAuthModuleAndroid'
 
 
 let store = createStore(
@@ -104,8 +105,13 @@ export default class SuperDuperMusicApp extends Component {
   }
 
   logout() {
-    //SpotifyAuthModuleAndroid.logOut();
+    SpotifyAuthModuleAndroid.logOut();
     AsyncStorage.removeItem('authToken')
+      .then(() => {
+        store.dispatch(setToken(''))
+        this.navigate(Routes.login)
+      })
+
   }
 
   getLocalAuthToken() {
