@@ -9,6 +9,7 @@ const mapStateToProps = (state) => {
     authToken: state.auth.token,
     query: state.query,
     artists: state.artists.items,
+    total: state.artists.total,
     isFetching: state.artists.isFetching,
     error: state.artists.error
   }

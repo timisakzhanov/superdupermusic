@@ -17,7 +17,7 @@ export const fetchArtistsError = (error) => {
 }
 
 export const fetchArtistsSuccess = (json) =>  {
-  return { type: 'RESULTS_FETCH_ARTISTS_SUCCESS', artists: json.artists.items }
+  return { type: 'RESULTS_FETCH_ARTISTS_SUCCESS', artists: json.artists }
 }
 
 

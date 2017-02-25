@@ -77,7 +77,7 @@ export default class ComponentResults extends Component {
 
   drawResults() {
     if (!this.props.isFetching && this.props.error == '') {
-      return <Text style={styles.info}>results related to {"\""}{this.props.query}{"\""}</Text>
+      return <Text style={styles.info}>{this.props.total} results related to {"\""}{this.props.query}{"\""}</Text>
     }
   }
 }
@@ -130,6 +130,7 @@ ComponentResults.propTypes = {
   authToken: PropTypes.string.isRequired,
   query: PropTypes.string.isRequired,
   artists: PropTypes.array.isRequired,
+  total: PropTypes.number.isRequired,
   isFetching: PropTypes.bool.isRequired,
   error: PropTypes.string.isRequired,
   onSceneCreated: PropTypes.func.isRequired,
