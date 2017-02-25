@@ -30,7 +30,7 @@ export default class ComponentResultsArtist extends Component {
 
   extractGenres() {
     let genresItems = this.props.artist.genres.length >= 2 ? 2 : this.props.artist.genres.length
-    let genres = genresItems > 0 ? this.props.artist.genres.slice(0, genresItems).join() : ''
+    let genres = genresItems > 0 ? this.props.artist.genres.slice(0, genresItems).join(', ') : ''
     return genres
   }
 

@@ -5,7 +5,8 @@ import { setToken, setError } from './ActionsAuthorization'
 
 const mapStateToProps = (state) => {
   return {
-    error: state.auth.error
+    error: state.auth.error,
+    token: state.auth.token
   }
 }
 

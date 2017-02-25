@@ -32,9 +32,11 @@ export default class ComponentArtistAlbumsList extends Component {
   }
 
   renderAlbumItem(album) {
-    return <Image source={{uri: album.images[1].url}} style={styles.album}>
-              <Text style={styles.name}>{album.name}</Text>
-           </Image>
+    return (
+      <View style={styles.album} key={album.id}>
+        <Image source={{uri: album.images[1].url}} style={styles.cover} />
+        <Text style={styles.name}>{album.name}</Text>
+      </View>)
   }
 
   displayProgress() {
@@ -57,25 +59,26 @@ export default class ComponentArtistAlbumsList extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#64B5F6'
+    marginTop: 10,
   },
   gridView: {
-    backgroundColor: '#AB47BC'
   },
   album:  {
     flex: 1,
-    height: 150
+    flexDirection: 'column',
+    alignItems: 'center',
+    paddingLeft: 10,
+    paddingRight: 10
+  },
+  cover: {
+    width: 120,
+    height: 120,
+    marginTop: 20
   },
   name: {
-    position: 'absolute',
-    bottom: 0,
-    marginLeft: 8,
-    marginBottom: 8,
-    fontSize: 16,
+    fontSize: 14,
     color: '#ffffff',
-    textShadowColor:'#585858',
-    textShadowOffset:{width: 2, height: 2},
-    textShadowRadius:5,
+    marginTop: 10
   }
 })
 

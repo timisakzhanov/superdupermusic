@@ -21,7 +21,7 @@ export default class SpotifyApi {
   }
 
   fetchArtistsAlbums(artistId) {
-    let requestUrl = this.url + 'artists/' + artistId + '/albums?album_type=single,album'
+    let requestUrl = this.url + 'artists/' + artistId + '/albums?album_type=album&market=US'
     return fetch(requestUrl, {
       method: 'GET',
       headers: this.headers

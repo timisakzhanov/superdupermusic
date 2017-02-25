@@ -95,7 +95,8 @@ export default class SuperDuperMusicApp extends Component {
                 onBackPress={() => this.navigator.pop()}/>
     }
     if (route.name == Routes.artist) {
-      return <ComponentArtist />
+      return <ComponentArtist
+                onBackPress={() => this.navigator.pop()}/>
     }
   }
 

@@ -11,42 +11,52 @@ export default class ComponentArtistInfo extends Component {
     console.log(this.props.images[0].url)
     return (
       <View style={ styles.container }>
-        <Image source={{uri: this.props.images[0].url }} style={ styles.image } >
-          <Text style={ styles.name }>{this.props.name}</Text>
-        </Image>
+        <Image source={{uri: this.props.images[0].url }} style={ styles.image } />
+        <Text style={ styles.name }>{this.props.name}</Text>
+        <Text style={ styles.genre}>{this.prepareGenres()}</Text>
       </View>
     )
+  }
+
+  prepareGenres() {
+    let genresLength = this.props.genres.length;
+    if (genresLength == 0) {
+      return null
+    }
+    let genresItems = genresLength > 3 ? 3 : genresLength
+    return this.props.genres.slice(0, genresItems).join(', ')
   }
 }
 
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#F8BBD0',
-    flexDirection: 'row',
-    height: 200
+    flexDirection: 'column',
+    alignItems: 'center',
   },
 
   image: {
-    flex: 1,
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    marginTop: 40,
   },
 
   name: {
-    position: 'absolute',
-    bottom: 0,
-    marginLeft: 8,
-    marginBottom: 8,
-
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#ffffff',
-    textShadowColor:'#585858',
-    textShadowOffset:{width: 2, height: 2},
-    textShadowRadius:5,
+    marginTop: 20,
+  },
+
+  genre: {
+    marginTop: 8,
+    color: '#ea2859'
   }
 });
 
 ComponentArtistInfo.propTypes = {
   images: React.PropTypes.array.isRequired,
-  name: React.PropTypes.string.isRequired
+  name: React.PropTypes.string.isRequired,
+  genres: React.PropTypes.array.isRequired
 }

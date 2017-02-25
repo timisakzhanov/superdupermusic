@@ -17,12 +17,8 @@ export default class ComponentAuthorization extends Component {
       <View style={styles.container} >
         <Image source={require('../res/img/background.png')} style={styles.background} />
 
-        <View style={styles.login_container}>
-          <Text style={styles.text}>
-            Get instant access to millions of songs - from old favorites to the latest hits.
-          </Text>
-          <Text style={styles.button} onPress={()=>this.startAuthProcess()}>Log in</Text>
-        </View>
+        <ComponentAuthContainer
+            startAuthProcess={()=> this.startAuthProcess()}/>
         {this.displayError()}
       </View>
     )
@@ -45,6 +41,19 @@ export default class ComponentAuthorization extends Component {
       if (this.props.error !== '') {
         return <Text style={styles.error}>{this.props.error}</Text>
       }
+  }
+}
+
+class ComponentAuthContainer extends Component {
+  render() {
+    return (
+      <View style={styles.login_container}>
+        <Text style={styles.text}>
+          Get instant access to millions of songs - from old favorites to the latest hits.
+        </Text>
+        <Text style={styles.button} onPress={()=>this.props.startAuthProcess()}>Log in</Text>
+      </View>
+    )
   }
 }
 
@@ -104,6 +113,7 @@ const styles = StyleSheet.create({
 })
 
 ComponentAuthorization.propTypes = {
+  token: React.PropTypes.string.isRequired,
   error: React.PropTypes.string.isRequired,
   onTokenReceived: React.PropTypes.func.isRequired,
   onAuthComplited: React.PropTypes.func.isRequired,
