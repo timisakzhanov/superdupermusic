@@ -7,6 +7,7 @@ import {
   ListView,
   Text,
   Image,
+  TouchableHighlight,
   AsyncStorage
 } from 'react-native'
 
@@ -24,10 +25,24 @@ export default class ComponentResults extends Component {
     const dataSource = this.ds.cloneWithRows(this.props.artists)
 
     return (
-      <View style={{flex: 1, backgroundColor: '#dedede' }}>
-        <Text style={{ fontSize: 20, marginLeft: 8, marginTop: 16, marginBottom: 16 }}>Artists list:</Text>
-        { this.drawProgress() }
-        { this.drawError() }
+      <View style={styles.container}>
+        <View style={styles.navigation_bar}>
+          <View style={styles.left_region} >
+            <TouchableHighlight onPress={()=>this.props.onBackPress()}>
+              <Image source={require('../res/img/arrow_back.png')} style={styles.back_btn} />
+            </TouchableHighlight>
+          </View>
+          <Text style={styles.navigation_title}>Results</Text>
+          <View style={styles.right_region} />
+        </View>
+
+        <View style={styles.info_panel}>
+          { this.drawProgress() }
+          { this.drawError() }
+          { this.drawResults() }
+        </View>
+
+
         <ListView
           dataSource={dataSource}
           renderRow={
@@ -41,7 +56,7 @@ export default class ComponentResults extends Component {
 
   processOnRowClicked(artist) {
     this.props.onArtistSelected(artist)
-    this.props.onSetArtistRoute()    
+    this.props.onSetArtistRoute()
   }
 
   componentDidMount() {
@@ -50,16 +65,66 @@ export default class ComponentResults extends Component {
 
   drawProgress() {
     if (this.props.isFetching) {
-      return <Text>Loading...</Text>
+      return <Text style={styles.info}>Loading...</Text>
     }
   }
 
   drawError() {
     if (this.props.error != '') {
-      return <Text>Error: {this.props.error}</Text>
+      return <Text style={styles.info}>Error: {this.props.error}</Text>
+    }
+  }
+
+  drawResults() {
+    if (!this.props.isFetching && this.props.error == '') {
+      return <Text style={styles.info}>results related to {"\""}{this.props.query}{"\""}</Text>
     }
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#231c2e'
+  },
+  navigation_bar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 60,
+    backgroundColor: '#ea2859'
+  },
+  back_btn: {
+    width: 24,
+    height: 24,
+    marginLeft: 16,
+  },
+  left_region: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+  },
+  right_region: {
+    flex: 1
+  },
+  navigation_title: {
+    color: '#ffffff',
+    fontSize: 18,
+    flex: 3,
+    textAlign: 'center',
+  },
+  info_panel: {
+    justifyContent: 'center',
+    height: 70,
+    borderBottomColor: '#5d5c61',
+    borderBottomWidth: 1
+  },
+  info: {
+    color: '#ffffff',
+    fontSize: 18,
+    marginLeft: 16,
+  }
+})
 
 ComponentResults.propTypes = {
   authToken: PropTypes.string.isRequired,
@@ -69,5 +134,6 @@ ComponentResults.propTypes = {
   error: PropTypes.string.isRequired,
   onSceneCreated: PropTypes.func.isRequired,
   onSetArtistRoute: PropTypes.func.isRequired,
-  onArtistSelected: PropTypes.func.isRequired
+  onArtistSelected: PropTypes.func.isRequired,
+  onBackPress: PropTypes.func.isRequired,
 }

@@ -16,7 +16,7 @@ export default class ComponentSearchQueryInput extends Component {
   render() {
     return (
       <View style={styles.search_btn_container}>
-        <Text style={styles.message}>Just hit play to stream anything you like.</Text>
+        <Text style={styles.message}>Type a singer you like and press search</Text>
 
         <TextInput style={styles.input}
           placeholder={this.props.placeholder}
