@@ -26,6 +26,7 @@ export default class ComponentArtistAlbumsList extends Component {
           itemsPerRow={2}
           renderItem={this.renderAlbumItem}
           style={ styles.gridView }
+          enableEmptySections={true}
         />
       </View>
     )

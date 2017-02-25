@@ -49,6 +49,7 @@ export default class ComponentResults extends Component {
             (rowData) =>
               <ComponentResultsArtist artist={rowData} onRowClicked={(artist) => this.processOnRowClicked(artist)}/>
           }
+          enableEmptySections={true}
         />
       </View>
     );
