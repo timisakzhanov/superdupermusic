@@ -15,14 +15,19 @@ export default class ComponentResultsArtist extends Component {
   }
 
   render() {
+    let genresItems = this.props.artist.genres.length >= 2 ? 2 : this.props.artist.genres.length;
+    let genres = genresItems > 0 ? this.props.artist.genres.slice(0, genresItems).join() : '';
     return (
       <TouchableHighlight onPress={() => this.props.onRowClicked(this.props.artist)}>
-        <View style={{flexDirection: 'row', height: 72, marginTop: 8, alignItems: 'center'}}>
+        <View style={styles.container}>
           <Image
-            style={{backgroundColor: '#E0E0E0', width: 72, height: 72, marginLeft: 8}}
+            style={styles.logo}
             source={{uri: this.image == null ? null : this.image.url}}
           />
-          <Text style={styles.artistName}>{this.props.artist.name}</Text>
+          <View style={styles.info}>
+            <Text style={styles.artistName}>{this.props.artist.name}</Text>
+            <Text style={styles.genre}>{genres}</Text>
+          </View>
         </View>
       </TouchableHighlight>
     )
@@ -30,9 +35,31 @@ export default class ComponentResultsArtist extends Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    paddingTop: 16,
+    paddingBottom: 16,
+    borderBottomColor: '#5d5c61',
+    borderBottomWidth: 1
+  },
+  logo: {
+    width: 90,
+    height: 90,
+    marginLeft: 16,
+    borderRadius: 45,
+  },
+  info: {
+    flexDirection: 'column',
+    marginLeft: 28
+  },
   artistName: {
-    marginLeft: 8,
-    fontSize: 16,
+    color: '#ffffff',
+    fontSize: 18,
+  },
+  genre: {
+    color: '#ea2859',
+    fontSize: 14,
+    marginTop: 2
   }
 });
 
