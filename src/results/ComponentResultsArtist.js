@@ -11,26 +11,36 @@ export default class ComponentResultsArtist extends Component {
 
   constructor(props) {
     super(props)
-    this.image = props.artist.images[2]
   }
 
   render() {
-    let genresItems = this.props.artist.genres.length >= 2 ? 2 : this.props.artist.genres.length;
-    let genres = genresItems > 0 ? this.props.artist.genres.slice(0, genresItems).join() : '';
+    let image = this.extractImage();
     return (
       <TouchableHighlight onPress={() => this.props.onRowClicked(this.props.artist)}>
         <View style={styles.container}>
-          <Image
-            style={styles.logo}
-            source={{uri: this.image == null ? null : this.image.url}}
-          />
+          <Image style={styles.logo} source={{uri: image}} key={image}/>
           <View style={styles.info}>
             <Text style={styles.artistName}>{this.props.artist.name}</Text>
-            <Text style={styles.genre}>{genres}</Text>
+            <Text style={styles.genre}>{this.extractGenres()}</Text>
           </View>
         </View>
       </TouchableHighlight>
     )
+  }
+
+  extractGenres() {
+    let genresItems = this.props.artist.genres.length >= 2 ? 2 : this.props.artist.genres.length
+    let genres = genresItems > 0 ? this.props.artist.genres.slice(0, genresItems).join() : ''
+    return genres
+  }
+
+  extractImage() {
+    let img = null
+    if (this.props.artist.images != null && this.props.artist.images.length > 0) {
+      let imagePosition = this.props.artist.images.length >= 3 ? 2 : this.props.artist.images.length - 1;
+      img = this.props.artist.images[imagePosition].url
+    }
+    return img
   }
 }
 
