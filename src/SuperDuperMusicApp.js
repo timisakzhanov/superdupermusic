@@ -56,7 +56,7 @@ export default class SuperDuperMusicApp extends Component {
 
   componentWillMount() {
     BackAndroid.addEventListener('hardwareBackPress', () => {
-      if (this.navigator && this.navigator.getCurrentRoutes().length > 1) {
+      if (this.navigator && this.navigator.getCurrentRoutes().length > 2) {
         this.navigator.pop();
         return true;
       }
