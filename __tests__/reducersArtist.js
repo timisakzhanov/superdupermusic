@@ -7,19 +7,15 @@ import {
 
 describe('artist reducer', () => {
 
-  let emptyState
-
-  beforeEach(() => {
-    emptyState = {
-        item: {},
-        isAlbumsFetching: false,
-        albumsFetchingError: '',
-        albums: []
-    }
-  })
-
   it('should return initial state', () => {
-    expect(artist(undefined, {})).toEqual(emptyState)
+    expect(artist(undefined, {})).toEqual(
+      {
+          item: {},
+          isAlbumsFetching: false,
+          albumsFetchingError: '',
+          albums: []
+      }
+    )
   })
 
   it ('should handle SELECT_ARTIST', () => {
@@ -38,7 +34,7 @@ describe('artist reducer', () => {
   it ('should handle FETCH_ALBUMS_START', () => {
     let fetchAlbumsStartAction = startFetchAlbums()
 
-    expect(artist(emptyState, fetchAlbumsStartAction))
+    expect(artist(undefined, fetchAlbumsStartAction))
       .toEqual({
         item: {},
         isAlbumsFetching: true,
