@@ -19,7 +19,7 @@ export default class ComponentArtist extends Component {
 
         <View style={styles.navigation_bar}>
           <View style={styles.left_region} >
-            <TouchableHighlight onPress={()=>this.props.onBackPress()}>
+            <TouchableHighlight onPress={()=>this.props.onBackPress()} style={styles.back_btn_container} underlayColor="#f5a2b7">
               <Image source={require('../res/img/arrow_back.png')} style={styles.back_btn} />
             </TouchableHighlight>
           </View>
@@ -28,7 +28,7 @@ export default class ComponentArtist extends Component {
         </View>
 
         <ContainerArtistInfo />
-        
+
         <ContainerArtistAlbumsList />
       </View>
     )
@@ -56,10 +56,16 @@ const styles = StyleSheet.create({
     height: 60,
     backgroundColor: '#ea2859'
   },
+  back_btn_container: {
+    width: 45,
+    height: 45,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 8,
+  },
   back_btn: {
     width: 24,
     height: 24,
-    marginLeft: 16,
   },
   left_region: {
     flex: 1,
