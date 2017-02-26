@@ -13,19 +13,22 @@ import com.spotify.sdk.android.authentication.AuthenticationClient;
 import com.spotify.sdk.android.authentication.AuthenticationRequest;
 import com.spotify.sdk.android.authentication.AuthenticationResponse;
 
+import static com.superdupermusic.modules.SpotifyData.REDIRECT_URI;
+import static com.superdupermusic.modules.SpotifyData.SPOTIFY_CLIENT_ID;
+
 /**
  * Created on 2/16/17.
  */
 
 public class SpotifyAuthModuleAndroid extends ReactContextBaseJavaModule {
 
-    private static final String SPOTIFY_CLIENT_ID = "43b53c4974ed4d6c92fc20c3fa3e4c59";
-    private static final int REQUEST_CODE = 1337;
-    private static final String REDIRECT_URI = "superduperapp://callback";
+    private static final String TAG = "SPOTIFY_AUTH_MODULE";
 
+    private static final int REQUEST_CODE = 1337;
 
     private Callback mErrorCallback;
     private Callback mSuccessCallback;
+
 
     public SpotifyAuthModuleAndroid(ReactApplicationContext reactContext) {
         super(reactContext);

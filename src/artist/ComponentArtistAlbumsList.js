@@ -36,7 +36,9 @@ export default class ComponentArtistAlbumsList extends Component {
     return (
       <View style={styles.album} key={album.id}>
         <Image source={{uri: album.images[1].url}} style={styles.cover} />
-        <Text style={styles.name}>{album.name}</Text>
+        <Text style={styles.name}>
+          {album.name}
+        </Text>
       </View>)
   }
 

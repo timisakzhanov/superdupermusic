@@ -11,4 +11,3 @@
           android:duration="@android:integer/config_shortAnimTime"
           />
 </set>
-<!-- From: file:/Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.41.2/res/anim/catalyst_push_up_out.xml -->
