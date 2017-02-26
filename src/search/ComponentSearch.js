@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react'
 import {
-  StyleSheet,
-  Dimensions,
   View,
   Text,
   Image,
   TouchableHighlight
 } from 'react-native'
+
+import { styles } from './Styles'
 
 import ComponentSearchHeader from './ComponentSearchHeader'
 import ContainerSearchQueryInput from './ContainerSearchQueryInput'
@@ -38,33 +38,3 @@ ComponentSearch.propTypes = {
   onSearchClick: PropTypes.func.isRequired,
   onLogoutClick: PropTypes.func.isRequired
 }
-
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  background: {
-    position: 'absolute',
-    top: 0, bottom: 0, left: 0, right: 0,
-    width: windowWidth,
-    height: windowHeight,
-    resizeMode: "stretch"
-  },
-  logo: {
-    height: 70,
-    width: 70,
-    marginTop: 30,
-    resizeMode: 'center'
-  },
-  logout: {
-    color: '#ffffff',
-    fontSize: 16,
-    textAlign: 'right',
-    marginTop: 12,
-    marginRight: 24
-  }
-
-});
