@@ -1,10 +1,9 @@
-"use strict"
+const SPOTIFY_URL = 'https://api.spotify.com/v1/'
 
 export default class SpotifyApi {
 
   constructor(authToken, _fetch=null) {
     this.fetch = _fetch === null ? fetch : _fetch
-    this.url = 'https://api.spotify.com/v1/'
     this.authToken = 'Bearer ' + authToken
     this.headers = {
       'Accept': 'application/json',
@@ -13,8 +12,12 @@ export default class SpotifyApi {
     }
   }
 
+  static get spotifyUrl() {
+    return SPOTIFY_URL
+  }
+
   searchArtists(query) {
-    let requestUrl = this.url + 'search?q=' + query + '&type=artist'
+    let requestUrl = SPOTIFY_URL + 'search?q=' + query + '&type=artist'
     return this.fetch(requestUrl, {
       method: 'GET',
       headers: this.headers
@@ -23,10 +26,10 @@ export default class SpotifyApi {
   }
 
   fetchArtistsAlbums(artistId) {
-    let requestUrl = this.url + 'artists/' + artistId + '/albums?album_type=album&market=US'
+    let requestUrl = SPOTIFY_URL + 'artists/' + artistId + '/albums?album_type=album&market=US'
     return this.fetch(requestUrl, {
       method: 'GET',
-      headers: this.headers
+      headers: this.headers,
     })
     .then((response) => this.processResponse(response))
   }

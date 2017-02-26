@@ -5,7 +5,7 @@ describe("Spotify API", () => {
   let fetch
 
   beforeEach(() => {
-    fetch = jest.fn()
+    fetch = jest.fn().mockImplementation(() => Promise.resolve({}))
     api = new SpotifyApi("my-secret-token", fetch)
   })
 
@@ -34,11 +34,16 @@ describe("Spotify API", () => {
     expect(response).toEqual(validResponse)
   })
 
-  it("fetch artist generates valid request params", () => {
-    throw Error("Not implemented")
+  it("searchArtists should generate correct request params", () => {
+    artist = 'testArtist'
+    api.searchArtists(artist)
+    expect(SpotifyApi.spotifyUrl + 'search?q=' + artist + '&type=artist').toEqual(fetch.mock.calls[0][0])
   })
 
-  it("search artist generates valid request params", () => {
-    throw Error("Not implemented")
+  it("fetchArtistsAlbums should generate correct request params", () => {
+    artistId = 'testArtistId'
+    api.fetchArtistsAlbums(artistId)
+    expect(SpotifyApi.spotifyUrl + 'artists/' + artistId + '/albums?album_type=album&market=US')
+      .toEqual(fetch.mock.calls[0][0])
   })
 })
