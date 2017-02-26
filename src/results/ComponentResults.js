@@ -47,9 +47,10 @@ export default class ComponentResults extends Component {
           dataSource={dataSource}
           renderRow={
             (rowData) =>
-              <ComponentResultsArtist artist={rowData} onRowClicked={(artist) => this.processOnRowClicked(artist)}/>
+              <ComponentResultsArtist artist={rowData} onRowClicked={() => this.processOnRowClicked(rowData)}/>
           }
           enableEmptySections={true}
+          keyboardShouldPersistTaps={true}
         />
       </View>
     );

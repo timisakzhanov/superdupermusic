@@ -16,7 +16,7 @@ export default class ComponentResultsArtist extends Component {
   render() {
     let image = this.extractImage();
     return (
-      <TouchableHighlight onPress={() => this.props.onRowClicked(this.props.artist)}>
+      <TouchableHighlight onPress={this.props.onRowClicked}>
         <View style={styles.container}>
           <Image style={styles.logo} source={{uri: image}} key={image}/>
           <View style={styles.info}>
