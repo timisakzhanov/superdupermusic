@@ -11,7 +11,8 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import "RCTBridgeModule.h"
+#import <React/RCTBridgeModule.h>
+// #import "RCTBridgeModule.h"
 
 @interface AppDelegate () <RCTBridgeModule>
   

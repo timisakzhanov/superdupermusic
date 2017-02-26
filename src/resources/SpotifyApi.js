@@ -1,7 +1,9 @@
 "use strict"
+
 export default class SpotifyApi {
 
-  constructor(authToken) {
+  constructor(authToken, _fetch=null) {
+    this.fetch = _fetch === null ? fetch : _fetch
     this.url = 'https://api.spotify.com/v1/'
     this.authToken = 'Bearer ' + authToken
     this.headers = {
@@ -13,7 +15,7 @@ export default class SpotifyApi {
 
   searchArtists(query) {
     let requestUrl = this.url + 'search?q=' + query + '&type=artist'
-    return fetch(requestUrl, {
+    return this.fetch(requestUrl, {
       method: 'GET',
       headers: this.headers
     })
@@ -22,7 +24,7 @@ export default class SpotifyApi {
 
   fetchArtistsAlbums(artistId) {
     let requestUrl = this.url + 'artists/' + artistId + '/albums?album_type=album&market=US'
-    return fetch(requestUrl, {
+    return this.fetch(requestUrl, {
       method: 'GET',
       headers: this.headers
     })
