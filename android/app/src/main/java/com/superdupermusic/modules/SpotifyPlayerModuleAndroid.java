@@ -71,36 +71,37 @@ public class SpotifyPlayerModuleAndroid extends ReactContextBaseJavaModule imple
 
     @Override
     public void onLoggedIn() {
-
+        Log.d(TAG, "onLoggedIn");
     }
 
     @Override
     public void onLoggedOut() {
-
+        Log.d(TAG, "onLoggedOut");
     }
 
     @Override
     public void onLoginFailed(int i) {
-
+        Log.d(TAG, "onLoginFailed");
     }
 
     @Override
     public void onTemporaryError() {
-
+        Log.d(TAG, "onTemporaryError");
     }
 
     @Override
     public void onConnectionMessage(String s) {
-
+        Log.d(TAG, "onConnectionMessage");
     }
 
     @Override
     public void onPlaybackEvent(PlayerEvent playerEvent) {
 
+        Log.d(TAG, "event value: " + PlayerEvent.valueOf(playerEvent.name()));
     }
 
     @Override
     public void onPlaybackError(Error error) {
-
+        Log.d(TAG, "onPlaybackEvent");
     }
 }

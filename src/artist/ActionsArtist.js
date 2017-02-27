@@ -24,6 +24,10 @@ export const fetchAlbumsSuccess = (json) =>  {
   return { type: 'FETCH_ALBUMS_SUCCESS', albums: json.items }
 }
 
+export const playAlbum = (_albumId) => {
+  return { type: 'PLAY_ALBUM', albumId: _albumId}
+}
+
 function fetchAlbums(spotifyApi, artistId) {
   return spotifyApi.fetchArtistsAlbums(artistId)
 }

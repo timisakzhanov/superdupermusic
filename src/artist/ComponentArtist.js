@@ -16,7 +16,6 @@ import { styles } from './Styles'
 export default class ComponentArtist extends Component {
   constructor(props) {
     super(props)
-    console.log("token: " + this.props.token)
     SpotifyPlayerModuleAndroid.initPlayer(this.props.token)
   }
 

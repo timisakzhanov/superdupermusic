@@ -2,7 +2,8 @@ const artist = (state = {
   item: {},
   isAlbumsFetching: false,
   albumsFetchingError: '',
-  albums: []
+  albums: [],
+  activeAlbumId: ''
 }, action) => {
   switch(action.type) {
     case 'SELECT_ARTIST':
@@ -13,6 +14,8 @@ const artist = (state = {
       return Object.assign({}, state, { isAlbumsFetching: false, albumsFetchingError: action.error })
     case 'FETCH_ALBUMS_SUCCESS':
       return Object.assign({}, state, { isAlbumsFetching: false, albumsFetchingError: '', albums: action.albums})
+    case 'PLAY_ALBUM':
+      return Object.assign({}, state, { activeAlbumId: action.albumId })
     default:
       return state
   }

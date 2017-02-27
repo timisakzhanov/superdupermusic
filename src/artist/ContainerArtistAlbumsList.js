@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import ComponentArtistAlbumsList from './ComponentArtistAlbumsList'
-import { fetchArtistAlbums } from './ActionsArtist'
+import { fetchArtistAlbums, playAlbum } from './ActionsArtist'
 
 const mapStateToProps = (state) => {
   return {
@@ -16,6 +16,10 @@ const mapDispatchToProps = (dispatch) =>  {
   return {
     onAlbumsLayoutDisplayed: (spotifyApi, artistId) => {
       dispatch(fetchArtistAlbums(spotifyApi, artistId))
+    },
+
+    onAlbumClicked: (albumId) => {
+      dispatch(playAlbum(albumId))
     }
   }
 }

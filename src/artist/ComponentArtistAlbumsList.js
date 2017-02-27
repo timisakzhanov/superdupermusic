@@ -3,7 +3,8 @@ import {
   StyleSheet,
   View,
   Text,
-  Image
+  Image,
+  TouchableHighlight
 } from 'react-native'
 import GridView from 'react-native-grid-view'
 import SpotifyApi from '../resources/SpotifyApi'
@@ -27,9 +28,10 @@ export default class ComponentArtistAlbumsList extends Component {
         <GridView
           items={this.props.albums}
           itemsPerRow={2}
-          renderItem={this.renderAlbumItem}
+          renderItem={this.renderAlbumItem.bind(this)}
           style={ styles.gridView }
           enableEmptySections={true}
+          keyboardShouldPersistTaps="always"
         />
       </View>
     )
@@ -38,10 +40,13 @@ export default class ComponentArtistAlbumsList extends Component {
   renderAlbumItem(album) {
     return (
       <View style={styles.album} key={album.id}>
-        <Image source={{uri: album.images[1].url}} style={styles.cover} />
-        <Text style={styles.name} onPress={()=>{
+        <TouchableHighlight onPress={()=>{
           SpotifyPlayerModuleAndroid.play(album.uri)
-        }}>
+          this.props.onAlbumClicked(album.id)
+        }} underlayColor='#f5a2b7'>
+          <Image source={{uri: album.images[1].url}} style={styles.cover} />
+        </TouchableHighlight>
+        <Text style={styles.name} >
           {album.name}
         </Text>
       </View>)
@@ -97,5 +102,6 @@ ComponentArtistAlbumsList.propTypes = {
   isAlbumsFetching: React.PropTypes.bool.isRequired,
   albumsFetchingError: React.PropTypes.string.isRequired,
   albums: React.PropTypes.array.isRequired,
-  onAlbumsLayoutDisplayed: React.PropTypes.func.isRequired
+  onAlbumsLayoutDisplayed: React.PropTypes.func.isRequired,
+  onAlbumClicked: React.PropTypes.func.isRequired,
 }
