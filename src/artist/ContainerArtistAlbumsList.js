@@ -27,6 +27,7 @@ const mapDispatchToProps = (dispatch) =>  {
 
       if (player.currentAlbumId != albumId) {
         // start playing
+        dispatch(startPauseAlbum())
         dispatch(startPlayAlbum(albumId, uri))
       }
 

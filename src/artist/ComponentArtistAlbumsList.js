@@ -21,6 +21,7 @@ export default class ComponentArtistAlbumsList extends Component {
       <View style={ styles.container }>
         { this.displayProgress() }
         { this.displayError() }
+        { this.displayAccessError() }
 
         <GridView
           items={this.props.albums}
@@ -60,6 +61,12 @@ export default class ComponentArtistAlbumsList extends Component {
   displayError() {
     if (this.props.albumsFetchingError !== '') {
       return <Text>Error: {this.props.albumsFetchingError}</Text>
+    }
+  }
+
+  displayAccessError() {
+    if (!this.props.player.isAuthenticating && !this.props.player.isPremium) {
+      return <Text style={styles.notification}>You need premium account to play tracks</Text>
     }
   }
 
@@ -120,6 +127,14 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#ffffff',
     marginTop: 10
+  },
+  notification: {
+    backgroundColor: '#FF9800',
+    color: '#ffffff',
+    paddingLeft: 8,
+    paddingTop: 4,
+    paddingRight: 8,
+    paddingBottom: 4    
   }
 })
 

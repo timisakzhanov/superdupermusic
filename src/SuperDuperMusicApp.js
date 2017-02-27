@@ -45,9 +45,9 @@ export default class SuperDuperMusicApp extends Component {
     super(props)
     this.navigator
 
-    // TODO: remove huck
+
     let unsubscribe = store.subscribe(() => {
-      console.log(store.getState())
+      //console.log(store.getState())
     })
 
     this.getLocalAuthToken()
