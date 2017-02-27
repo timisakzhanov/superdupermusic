@@ -33,6 +33,7 @@ import { setToken } from './authorization/ActionsAuthorization'
 
 import Routes from './routes'
 import SpotifyAuthModuleAndroid from './nativeModules/SpotifyAuthModuleAndroid'
+import SpotifyPlayerModuleAndroid from './nativeModules/SpotifyPlayerModuleAndroid'
 
 
 let store = createStore(
