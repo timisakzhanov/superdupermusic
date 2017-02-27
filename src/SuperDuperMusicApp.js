@@ -14,7 +14,7 @@ import thunk from 'redux-thunk'
 import ContainerAuthorization from './authorization/ContainerAuthorization'
 import ContainerResults from './results/ContainerResults'
 import ComponentSearch from './search/ComponentSearch'
-import ComponentArtist from './artist/ComponentArtist'
+import ContainerArtist from './artist/ContainerArtist'
 import buildStyleInterpolator from 'react-native/Libraries/Utilities/buildStyleInterpolator'
 
 
@@ -33,8 +33,6 @@ import { setToken } from './authorization/ActionsAuthorization'
 
 import Routes from './routes'
 import SpotifyAuthModuleAndroid from './nativeModules/SpotifyAuthModuleAndroid'
-import SpotifyPlayerModuleAndroid from './nativeModules/SpotifyPlayerModuleAndroid'
-
 
 let store = createStore(
   rootReducer,
@@ -96,8 +94,7 @@ export default class SuperDuperMusicApp extends Component {
                 onBackPress={() => this.navigator.pop()}/>
     }
     if (route.name == Routes.artist) {
-      return <ComponentArtist
-                onBackPress={() => this.navigator.pop()}/>
+      return <ContainerArtist onBackPress={() => this.navigator.pop()}/>
     }
   }
 

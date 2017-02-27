@@ -8,6 +8,9 @@ import {
 import GridView from 'react-native-grid-view'
 import SpotifyApi from '../resources/SpotifyApi'
 
+import SpotifyPlayerModuleAndroid from '../nativeModules/SpotifyPlayerModuleAndroid'
+
+
 
 export default class ComponentArtistAlbumsList extends Component {
   constructor(props) {
@@ -36,11 +39,14 @@ export default class ComponentArtistAlbumsList extends Component {
     return (
       <View style={styles.album} key={album.id}>
         <Image source={{uri: album.images[1].url}} style={styles.cover} />
-        <Text style={styles.name}>
+        <Text style={styles.name} onPress={()=>{
+          SpotifyPlayerModuleAndroid.play(album.uri)
+        }}>
           {album.name}
         </Text>
       </View>)
   }
+
 
   displayProgress() {
     if (this.props.isAlbumsFetching) {

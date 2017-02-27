@@ -60,7 +60,14 @@ public class SpotifyPlayerModuleAndroid extends ReactContextBaseJavaModule imple
     }
 
     @ReactMethod
-    public void destroyPlayer() {}
+    public void pause() {
+        mPlayer.pause();
+    }
+
+    @ReactMethod
+    public void destroyPlayer() {
+        Spotify.destroyPlayer(this);
+    }
 
     @Override
     public void onLoggedIn() {
