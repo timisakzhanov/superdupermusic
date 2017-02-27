@@ -15,7 +15,8 @@
 // #import "RCTBridgeModule.h"
 
 @interface AppDelegate () <RCTBridgeModule>
-  
+//@interface AppDelegate ()
+
   @property (nonatomic, strong) SPTAuth *auth;
   @property (nonatomic, strong) SPTAudioStreamingController *player;
   @property (nonatomic, strong) UIViewController *authViewController;
@@ -26,7 +27,7 @@
 @implementation AppDelegate
 
 RCT_EXPORT_MODULE();
-  
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   NSURL *jsCodeLocation;
@@ -45,15 +46,28 @@ RCT_EXPORT_MODULE();
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   
+  [self initializeSpotify];
+  
+  // Uncomment to start Spotify authentication on app launch
+//  dispatch_async(dispatch_get_main_queue(), ^{
+//    [self startAuthenticationFlow];
+//  });
+  
+  
+  return YES;
+}
+
+- (void)initializeSpotify
+{
   // Spotify credentials
   
   self.auth = [SPTAuth defaultInstance];
   self.player = [SPTAudioStreamingController sharedInstance];
   
   // The client ID you got from the developer site
-  self.auth.clientID = @"Your-Client-Id";
+  self.auth.clientID = @"43b53c4974ed4d6c92fc20c3fa3e4c59";
   // The redirect URL as you entered it at the developer site
-  self.auth.redirectURL = [NSURL URLWithString:@"Your-Callback-URL"];
+  self.auth.redirectURL = [NSURL URLWithString:@"superduperapp://callback"];
   // Setting the `sessionUserDefaultsKey` enables SPTAuth to automatically store the session object for future use.
   self.auth.sessionUserDefaultsKey = @"current session";
   // Set the scopes you need the user to authorize. `SPTAuthStreamingScope` is required for playing audio.
@@ -66,38 +80,37 @@ RCT_EXPORT_MODULE();
   NSError *audioStreamingInitError;
   NSAssert([self.player startWithClientId:self.auth.clientID error:&audioStreamingInitError],
            @"There was a problem starting the Spotify SDK: %@", audioStreamingInitError.description);
-  
-  
-  // Uncomment to start Spotify authentication on app launch
-//  dispatch_async(dispatch_get_main_queue(), ^{
-//    [self startAuthenticationFlow];
-//  });
-  
-  
-  return YES;
 }
 
   // Start Spotify athentication from React method call
 RCT_EXPORT_METHOD(startSpotifyAuthorization)
 {
   dispatch_async(dispatch_get_main_queue(), ^{
+    
+    if (!self.auth) {
+      NSLog(@"initialize Spotify");
+      [self initializeSpotify];
+    }
+    NSLog(@"Start from React");
     [self startAuthenticationFlow];
+    NSLog(@"Start ended from React");
   });
 }
 
 - (void)startAuthenticationFlow
   {
     // Check if we could use the access token we already have
-    if ([self.auth.session isValid]) {
-      // Use it to log in
-      [self.player loginWithAccessToken:self.auth.session.accessToken];
-    } else {
+//    if ([self.auth.session isValid]) {
+//      // Use it to log in
+//      [self.player loginWithAccessToken:self.auth.session.accessToken];
+//    } else {
       // Get the URL to the Spotify authorization portal
       NSURL *authURL = [self.auth spotifyWebAuthenticationURL];
+      NSLog(@"%@", authURL.path);
       // Present in a SafariViewController
       self.authViewController = [[SFSafariViewController alloc] initWithURL:authURL];
       [self.window.rootViewController presentViewController:self.authViewController animated:YES completion:nil];
-    }
+//    }
   }
   
 - (BOOL)application:(UIApplication *)app
@@ -130,5 +143,5 @@ RCT_EXPORT_METHOD(startSpotifyAuthorization)
       }
     }];
   }
-  
+
 @end
