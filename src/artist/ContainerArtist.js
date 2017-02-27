@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import ComponentArtist from './ComponentArtist'
+import { authPlayer, destroyPlayer } from './ActionsArtist'
 
 const mapStateToProps = (state) => {
   return {
@@ -8,7 +9,15 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) =>  {
-  return {}
+  return {
+    onArtistScreenCreated: (token) => {
+      dispatch(authPlayer(token))
+    },
+
+    onDestroyPlayer: () => {
+      dispatch(destroyPlayer())
+    }
+  }
 }
 
 const ContainerArtist = connect(

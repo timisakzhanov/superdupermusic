@@ -8,7 +8,6 @@ import {
 
 import ContainerArtistInfo from './ContainerArtistInfo'
 import ContainerArtistAlbumsList from './ContainerArtistAlbumsList'
-import SpotifyPlayerModuleAndroid from '../nativeModules/SpotifyPlayerModuleAndroid'
 
 
 import { styles } from './Styles'
@@ -16,7 +15,7 @@ import { styles } from './Styles'
 export default class ComponentArtist extends Component {
   constructor(props) {
     super(props)
-    SpotifyPlayerModuleAndroid.initPlayer(this.props.token)
+    this.props.onArtistScreenCreated(this.props.token)
   }
 
   render() {
@@ -42,13 +41,14 @@ export default class ComponentArtist extends Component {
   }
 
   performBackPress() {
-    SpotifyPlayerModuleAndroid.pause()
-    SpotifyPlayerModuleAndroid.destroyPlayer()
+    this.props.onDestroyPlayer()
     this.props.onBackPress()
   }
 }
 
 ComponentArtist.propTypes = {
   token: PropTypes.string.isRequired,
-  onBackPress: PropTypes.func.isRequired
+  onBackPress: PropTypes.func.isRequired,
+  onArtistScreenCreated: PropTypes.func.isRequired,
+  onDestroyPlayer: PropTypes.func.isRequired,
 }

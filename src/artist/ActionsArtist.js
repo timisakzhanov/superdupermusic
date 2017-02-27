@@ -1,6 +1,5 @@
-export const selectArtist = (artistObj) => {
-  return { type: 'SELECT_ARTIST', artist: artistObj }
-}
+import SpotifyPlayerModuleAndroid from '../nativeModules/SpotifyPlayerModuleAndroid'
+
 
 export const fetchArtistAlbums = (spotifyApi, artistId) => {
   return function(dispatch) {
@@ -10,6 +9,27 @@ export const fetchArtistAlbums = (spotifyApi, artistId) => {
       .then((json) => dispatch(fetchAlbumsSuccess(json)))
       .catch((error) => dispatch(fetchAlbumsError(error)))
   }
+}
+
+export const authPlayer = (token) => {
+  return function(dispatch) {
+    dispatch(startAuthPlayer())
+    return SpotifyPlayerModuleAndroid.initPlayer(token)
+      .then((response) => dispatch(successAuthPlayer()))
+      .catch((error) => dispatch(failAuthPlayer()))
+  }
+}
+
+export const destroyPlayer = () => {
+  return function(dispatch) {
+    dispatch(pauseAlbum())
+    SpotifyPlayerModuleAndroid.pause()
+    SpotifyPlayerModuleAndroid.destroyPlayer()
+  }
+}
+
+export const selectArtist = (artistObj) => {
+  return { type: 'SELECT_ARTIST', artist: artistObj }
 }
 
 export const startFetchAlbums = () =>  {

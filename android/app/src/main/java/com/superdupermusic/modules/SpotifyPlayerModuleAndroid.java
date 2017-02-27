@@ -2,6 +2,7 @@ package com.superdupermusic.modules;
 
 import android.util.Log;
 
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -26,6 +27,8 @@ public class SpotifyPlayerModuleAndroid extends ReactContextBaseJavaModule imple
 
     private Player mPlayer;
 
+    private Promise playerInitializePromise;
+
     public SpotifyPlayerModuleAndroid(ReactApplicationContext reactContext) {
         super(reactContext);
     }
@@ -36,7 +39,9 @@ public class SpotifyPlayerModuleAndroid extends ReactContextBaseJavaModule imple
     }
 
     @ReactMethod
-    public void initPlayer(String accessToken) {
+    public void initPlayer(String accessToken, Promise promise) {
+        playerInitializePromise = promise;
+
         Config playerConfig = new Config(getCurrentActivity(), accessToken, SpotifyData.SPOTIFY_CLIENT_ID);
 
         Spotify.getPlayer(playerConfig, this, new SpotifyPlayer.InitializationObserver() {
@@ -71,8 +76,9 @@ public class SpotifyPlayerModuleAndroid extends ReactContextBaseJavaModule imple
 
     @Override
     public void onLoggedIn() {
-
-        // Callback to check that player is ready
+        if (playerInitializePromise != null) {
+            playerInitializePromise.resolve("success");
+        }
         Log.d(TAG, "onLoggedIn");
     }
 
@@ -83,7 +89,9 @@ public class SpotifyPlayerModuleAndroid extends ReactContextBaseJavaModule imple
 
     @Override
     public void onLoginFailed(int i) {
-        // Callback to check that we failed to login, inform user
+        if (playerInitializePromise != null) {
+            playerInitializePromise.reject("error", "failed to auth");
+        }
         Log.d(TAG, "onLoginFailed");
     }
 
