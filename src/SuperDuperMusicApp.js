@@ -48,9 +48,11 @@ export default class SuperDuperMusicApp extends Component {
     this.navigator
 
 
+    /*
     let unsubscribe = store.subscribe(() => {
       console.log(store.getState())
     })
+    */
 
     this.getLocalAuthToken()
   }

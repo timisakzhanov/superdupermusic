@@ -7,7 +7,7 @@ import {
 } from 'react-native'
 
 import SpotifyAuthModuleAndroid from '../nativeModules/SpotifyAuthModuleAndroid'
-//import SpotifyAuthModuleIOS from '../nativeModules/SpotifyAuthModuleIOS'
+import SpotifyAuthModuleIOS from '../nativeModules/SpotifyAuthModuleIOS'
 import { NativeModules } from 'react-native';
 
 
@@ -28,22 +28,23 @@ export default class ComponentAuthorization extends Component {
   }
 
   startAuthProcess() {
-    //var AppDelegate = NativeModules.AppDelegate;
-    //AppDelegate.startSpotifyAuthorization()
+    if (this.props.platform === 'ios') {
+      var AppDelegate = NativeModules.AppDelegate;
+      AppDelegate.startSpotifyAuthorization()
+    }
 
-
-
-    SpotifyAuthModuleAndroid.startAuthProcess(
-      (error)=>{
-        this.props.onAuthError("Failed to login")
-      },
-      (token)=>{
-        this.props.onTokenReceived(token)
-        AsyncStorage.setItem('authToken', token)
-          .then(() => this.props.onAuthComplited())
-      }
-    )
-
+    if (this.props.platform === 'android') {
+      SpotifyAuthModuleAndroid.startAuthProcess(
+        (error)=>{
+          this.props.onAuthError("Failed to login")
+        },
+        (token)=>{
+          this.props.onTokenReceived(token)
+          AsyncStorage.setItem('authToken', token)
+            .then(() => this.props.onAuthComplited())
+        }
+      )
+    }
   }
 
   displayError() {
@@ -69,6 +70,7 @@ class ComponentAuthContainer extends Component {
 ComponentAuthorization.propTypes = {
   token: React.PropTypes.string.isRequired,
   error: React.PropTypes.string.isRequired,
+  platform: React.PropTypes.string.isRequired,
   onTokenReceived: React.PropTypes.func.isRequired,
   onAuthComplited: React.PropTypes.func.isRequired,
   onAuthError: React.PropTypes.func.isRequired
