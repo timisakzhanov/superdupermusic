@@ -6,7 +6,7 @@ import {
   Image,
 } from 'react-native'
 
-//import SpotifyAuthModuleAndroid from '../nativeModules/SpotifyAuthModuleAndroid'
+import SpotifyAuthModuleAndroid from '../nativeModules/SpotifyAuthModuleAndroid'
 //import SpotifyAuthModuleIOS from '../nativeModules/SpotifyAuthModuleIOS'
 import { NativeModules } from 'react-native';
 
@@ -28,11 +28,11 @@ export default class ComponentAuthorization extends Component {
   }
 
   startAuthProcess() {
-    var AppDelegate = NativeModules.AppDelegate;
-    AppDelegate.startSpotifyAuthorization()
-    
+    //var AppDelegate = NativeModules.AppDelegate;
+    //AppDelegate.startSpotifyAuthorization()
 
-    /*
+
+
     SpotifyAuthModuleAndroid.startAuthProcess(
       (error)=>{
         this.props.onAuthError("Failed to login")
@@ -43,7 +43,7 @@ export default class ComponentAuthorization extends Component {
           .then(() => this.props.onAuthComplited())
       }
     )
-    */
+
   }
 
   displayError() {

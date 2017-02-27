@@ -4,7 +4,8 @@ const windowHeight = Dimensions.get('window').height
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: '#352144'
   },
   background: {
     position: 'absolute',
