@@ -63,10 +63,26 @@ export default class ComponentArtistAlbumsList extends Component {
     }
   }
 
+  //TODO: refactoring
   displayPlayBtn(albumId) {
-    if (albumId === this.props.activeAlbumId) {
-      return <View><Image source={require('../res/img/ic_pause.png')} style={styles.controlls} /></View>
+    // hide controlls if not premium
+    if (!this.props.player.isPremium) {
+      return null
     }
+
+    if (albumId === this.props.player.currentAlbumId) {
+      if (this.props.player.isPlaying) {
+        return <View><Image source={require('../res/img/ic_pause.png')} style={styles.controlls} /></View>
+      } else if (this.props.player.isPause) {
+        return <View><Image source={require('../res/img/ic_play.png')} style={styles.controlls} /></View>
+      } else {
+        // user action is processing
+        //TODO: display preloader
+        return null
+      }
+    }
+
+    // show play btn default
     return <View><Image source={require('../res/img/ic_play.png')} style={styles.controlls} /></View>
   }
 
