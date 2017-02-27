@@ -8,7 +8,8 @@ const mapStateToProps = (state) => {
     artistId: state.artist.item.id,
     isAlbumsFetching: state.artist.isAlbumsFetching,
     albumsFetchingError: state.artist.albumsFetchingError,
-    albums: state.artist.albums
+    albums: state.artist.albums,
+    activeAlbumId: state.artist.activeAlbumId,
   }
 }
 

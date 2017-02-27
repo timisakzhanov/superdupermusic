@@ -42,6 +42,7 @@ export default class ComponentArtist extends Component {
   }
 
   performBackPress() {
+    SpotifyPlayerModuleAndroid.pause()
     SpotifyPlayerModuleAndroid.destroyPlayer()
     this.props.onBackPress()
   }

@@ -71,6 +71,8 @@ public class SpotifyPlayerModuleAndroid extends ReactContextBaseJavaModule imple
 
     @Override
     public void onLoggedIn() {
+
+        // Callback to check that player is ready
         Log.d(TAG, "onLoggedIn");
     }
 
@@ -81,6 +83,7 @@ public class SpotifyPlayerModuleAndroid extends ReactContextBaseJavaModule imple
 
     @Override
     public void onLoginFailed(int i) {
+        // Callback to check that we failed to login, inform user
         Log.d(TAG, "onLoginFailed");
     }
 
@@ -96,12 +99,17 @@ public class SpotifyPlayerModuleAndroid extends ReactContextBaseJavaModule imple
 
     @Override
     public void onPlaybackEvent(PlayerEvent playerEvent) {
-
-        Log.d(TAG, "event value: " + PlayerEvent.valueOf(playerEvent.name()));
+        switch(playerEvent) {
+            case kSpPlaybackNotifyPlay:
+                Log.d(TAG, "start playing");
+                break;
+            case kSpPlaybackNotifyPause:
+                Log.d(TAG, "pause playing");
+        }
     }
 
     @Override
     public void onPlaybackError(Error error) {
-        Log.d(TAG, "onPlaybackEvent");
+        Log.d(TAG, "error happened, we should inform user");
     }
 }

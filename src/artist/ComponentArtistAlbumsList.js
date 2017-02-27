@@ -44,7 +44,9 @@ export default class ComponentArtistAlbumsList extends Component {
           SpotifyPlayerModuleAndroid.play(album.uri)
           this.props.onAlbumClicked(album.id)
         }} underlayColor='#f5a2b7'>
-          <Image source={{uri: album.images[1].url}} style={styles.cover} />
+          <Image source={{uri: album.images[1].url}} style={styles.cover} >
+            {this.displayPlayBtn(album.id)}
+          </Image>
         </TouchableHighlight>
         <Text style={styles.name} >
           {album.name}
@@ -63,6 +65,13 @@ export default class ComponentArtistAlbumsList extends Component {
     if (this.props.albumsFetchingError !== '') {
       return <Text>Error: {this.props.albumsFetchingError}</Text>
     }
+  }
+
+  displayPlayBtn(albumId) {
+    if (albumId === this.props.activeAlbumId) {
+      return <View><Image source={require('../res/img/ic_pause.png')} style={styles.controlls} /></View>
+    }
+    return <View><Image source={require('../res/img/ic_play.png')} style={styles.controlls} /></View>
   }
 
   componentDidMount() {
@@ -87,7 +96,13 @@ const styles = StyleSheet.create({
   cover: {
     width: 120,
     height: 120,
-    marginTop: 20
+    marginTop: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  controlls: {
+    width: 50,
+    height: 50,
   },
   name: {
     fontSize: 14,
@@ -102,6 +117,7 @@ ComponentArtistAlbumsList.propTypes = {
   isAlbumsFetching: React.PropTypes.bool.isRequired,
   albumsFetchingError: React.PropTypes.string.isRequired,
   albums: React.PropTypes.array.isRequired,
+  activeAlbumId: React.PropTypes.string.isRequired,
   onAlbumsLayoutDisplayed: React.PropTypes.func.isRequired,
   onAlbumClicked: React.PropTypes.func.isRequired,
 }

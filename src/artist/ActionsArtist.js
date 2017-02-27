@@ -24,8 +24,28 @@ export const fetchAlbumsSuccess = (json) =>  {
   return { type: 'FETCH_ALBUMS_SUCCESS', albums: json.items }
 }
 
-export const playAlbum = (_albumId) => {
-  return { type: 'PLAY_ALBUM', albumId: _albumId}
+export const startAuthPlayer = () => {
+  return { type: 'START_AUTH_PLAYER' }
+}
+
+export const successAuthPlayer = () => {
+  return { type: 'SUCCESS_AUTH_PLAYER' }
+}
+
+export const failAuthPlayer = () => {
+  return { type: 'FAIL_AUTH_PLAYER' }
+}
+
+export const selectAlbum = (_albumId) => {
+  return { type: 'SELECT_ALBUM', albumId: _albumId }
+}
+
+export const playAlbum = () => {
+  return { type: 'PLAY_ALBUM' }
+}
+
+export const pauseAlbum = () => {
+  return { type: 'PAUSE_ALBUM' }
 }
 
 function fetchAlbums(spotifyApi, artistId) {
