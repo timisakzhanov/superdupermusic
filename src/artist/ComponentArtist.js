@@ -9,9 +9,15 @@ import {
 import ContainerArtistInfo from './ContainerArtistInfo'
 import ContainerArtistAlbumsList from './ContainerArtistAlbumsList'
 
+
 import { styles } from './Styles'
 
 export default class ComponentArtist extends Component {
+  constructor(props) {
+    super(props)
+    this.props.onArtistScreenCreated(this.props.token)
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -19,7 +25,7 @@ export default class ComponentArtist extends Component {
 
         <View style={styles.navigation_bar}>
           <View style={styles.left_region} >
-            <TouchableHighlight onPress={()=>this.props.onBackPress()} style={styles.back_btn_container} underlayColor="#f5a2b7">
+            <TouchableHighlight onPress={()=>this.performBackPress()} style={styles.back_btn_container} underlayColor="#f5a2b7">
               <Image source={require('../res/img/arrow_back.png')} style={styles.back_btn} />
             </TouchableHighlight>
           </View>
@@ -33,8 +39,16 @@ export default class ComponentArtist extends Component {
       </View>
     )
   }
+
+  performBackPress() {
+    this.props.onDestroyPlayer()
+    this.props.onBackPress()
+  }
 }
 
 ComponentArtist.propTypes = {
-  onBackPress: PropTypes.func.isRequired
+  token: PropTypes.string.isRequired,
+  onBackPress: PropTypes.func.isRequired,
+  onArtistScreenCreated: PropTypes.func.isRequired,
+  onDestroyPlayer: PropTypes.func.isRequired,
 }
