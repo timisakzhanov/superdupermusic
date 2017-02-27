@@ -29,6 +29,7 @@ import rootReducer from './ReducersApp'
  */
 import { updateSearchQuery } from './search/ActionsSearch'
 import { setToken } from './authorization/ActionsAuthorization'
+import { setPlatform } from './ActionsApp'
 
 
 import Routes from './routes'
@@ -43,11 +44,12 @@ let store = createStore(
 export default class SuperDuperMusicApp extends Component {
   constructor(props) {
     super(props)
+    store.dispatch(setPlatform(this.props.platform))
     this.navigator
 
 
     let unsubscribe = store.subscribe(() => {
-      //console.log(store.getState())
+      console.log(store.getState())
     })
 
     this.getLocalAuthToken()
