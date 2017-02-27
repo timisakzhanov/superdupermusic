@@ -28,6 +28,8 @@ public class SpotifyPlayerModuleAndroid extends ReactContextBaseJavaModule imple
     private Player mPlayer;
 
     private Promise playerInitializePromise;
+    private Promise playAlbumPromise;
+    private Promise pauseAlbumPromise;
 
     public SpotifyPlayerModuleAndroid(ReactApplicationContext reactContext) {
         super(reactContext);
@@ -60,12 +62,14 @@ public class SpotifyPlayerModuleAndroid extends ReactContextBaseJavaModule imple
     }
 
     @ReactMethod
-    public void play(String uri) {
+    public void play(String uri, Promise promise) {
+        playAlbumPromise = promise;
         mPlayer.playUri(uri, 0, 0);
     }
 
     @ReactMethod
-    public void pause() {
+    public void pause(Promise promise) {
+        pauseAlbumPromise = promise;
         mPlayer.pause();
     }
 
@@ -109,10 +113,18 @@ public class SpotifyPlayerModuleAndroid extends ReactContextBaseJavaModule imple
     public void onPlaybackEvent(PlayerEvent playerEvent) {
         switch(playerEvent) {
             case kSpPlaybackNotifyPlay:
-                Log.d(TAG, "start playing");
+                // Start playing
+                if (playAlbumPromise != null) {
+                    Log.d(TAG, "play");
+                    playAlbumPromise.resolve("success");
+                }
                 break;
             case kSpPlaybackNotifyPause:
-                Log.d(TAG, "pause playing");
+                if (pauseAlbumPromise != null) {
+                    Log.d(TAG, "pause");
+                    pauseAlbumPromise.resolve("success");
+                }
+                break;
         }
     }
 

@@ -28,6 +28,22 @@ export const destroyPlayer = () => {
   }
 }
 
+export const startPlayAlbum = (albumId, albumUri) => {
+  return function(dispatch) {
+    dispatch(selectAlbum(albumId))
+    return SpotifyPlayerModuleAndroid.play(albumUri)
+      .then((response) => dispatch(playAlbum()))
+  }
+
+}
+
+export const startPauseAlbum = () => {
+  return function(dispatch) {
+    return SpotifyPlayerModuleAndroid.pause()
+      .then((response) => dispatch(pauseAlbum()))
+  }
+}
+
 export const selectArtist = (artistObj) => {
   return { type: 'SELECT_ARTIST', artist: artistObj }
 }

@@ -9,9 +9,6 @@ import {
 import GridView from 'react-native-grid-view'
 import SpotifyApi from '../resources/SpotifyApi'
 
-import SpotifyPlayerModuleAndroid from '../nativeModules/SpotifyPlayerModuleAndroid'
-
-
 
 export default class ComponentArtistAlbumsList extends Component {
   constructor(props) {
@@ -41,8 +38,7 @@ export default class ComponentArtistAlbumsList extends Component {
     return (
       <View style={styles.album} key={album.id}>
         <TouchableHighlight onPress={()=>{
-          SpotifyPlayerModuleAndroid.play(album.uri)
-          this.props.onAlbumClicked(album.id)
+          this.props.onAlbumClicked(album.id, album.uri, this.props.player)
         }} underlayColor='#f5a2b7'>
           <Image source={{uri: album.images[1].url}} style={styles.cover} >
             {this.displayPlayBtn(album.id)}
@@ -117,7 +113,7 @@ ComponentArtistAlbumsList.propTypes = {
   isAlbumsFetching: React.PropTypes.bool.isRequired,
   albumsFetchingError: React.PropTypes.string.isRequired,
   albums: React.PropTypes.array.isRequired,
-  activeAlbumId: React.PropTypes.string.isRequired,
+  player: React.PropTypes.object.isRequired,
   onAlbumsLayoutDisplayed: React.PropTypes.func.isRequired,
   onAlbumClicked: React.PropTypes.func.isRequired,
 }

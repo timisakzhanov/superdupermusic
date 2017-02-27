@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import ComponentArtistAlbumsList from './ComponentArtistAlbumsList'
-import { fetchArtistAlbums, playAlbum } from './ActionsArtist'
+import { fetchArtistAlbums, startPlayAlbum, startPauseAlbum } from './ActionsArtist'
 
 const mapStateToProps = (state) => {
   return {
@@ -10,6 +10,7 @@ const mapStateToProps = (state) => {
     albumsFetchingError: state.artist.albumsFetchingError,
     albums: state.artist.albums,
     activeAlbumId: state.artist.activeAlbumId,
+    player: state.artist.player
   }
 }
 
@@ -19,8 +20,25 @@ const mapDispatchToProps = (dispatch) =>  {
       dispatch(fetchArtistAlbums(spotifyApi, artistId))
     },
 
-    onAlbumClicked: (albumId) => {
-      dispatch(playAlbum(albumId))
+    onAlbumClicked: (albumId, uri, player) => {
+      if (!player.isPremium) {
+        return
+      }
+
+      if (player.currentAlbumId != albumId) {
+        // start playing
+        dispatch(startPlayAlbum(albumId, uri))
+      }
+
+      if (player.currentAlbumId == albumId) {
+        if (player.isPlaying == true) {
+          dispatch(startPauseAlbum())
+        } else if (player.isPause == true) {
+          // resume
+          dispatch(startPlayAlbum(albumId, uri))
+        }
+      }
+
     }
   }
 }
