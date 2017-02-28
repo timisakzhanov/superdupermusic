@@ -1,24 +1,6 @@
 dependencies: \
   /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SuperDuperMusic/AppDelegate.m \
   /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SuperDuperMusic/AppDelegate.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAuthentication.framework/Headers/SpotifyAuthentication.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAuthentication.framework/Headers/SPTAuth.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAuthentication.framework/Headers/SPTSession.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAuthentication.framework/Headers/SPTConnectButton.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAuthentication.framework/Headers/SPTAuthViewController.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAuthentication.framework/Headers/SPTStoreViewController.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAuthentication.framework/Headers/SPTEmbeddedImages.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAudioPlayback.framework/Headers/SpotifyAudioPlayback.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAudioPlayback.framework/Headers/SPTCircularBuffer.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAudioPlayback.framework/Headers/SPTCoreAudioController.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAudioPlayback.framework/Headers/SPTAudioStreamingController.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAudioPlayback.framework/Headers/SPTAudioPlaybackTypes.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAudioPlayback.framework/Headers/SPTDiskCache.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAudioPlayback.framework/Headers/SPTDiskCaching.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAudioPlayback.framework/Headers/SPTPlaybackMetadata.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAudioPlayback.framework/Headers/SpPlaybackEvent.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAudioPlayback.framework/Headers/SPTPlaybackState.h \
-  /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/SpotifyAudioPlayback.framework/Headers/SPTAudioStreamingController_ErrorCodes.h \
   /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBundleURLProvider.h \
   /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
   /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
