@@ -14,7 +14,7 @@
 //#import <SafariServices/SafariServices.h>
 
 //@interface AppDelegate : UIResponder <UIApplicationDelegate, SPTAudioStreamingDelegate>
-@interface AppDelegate : UIResponder
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (nonatomic, strong) UIWindow *window;
 
 @end

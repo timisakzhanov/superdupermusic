@@ -8,7 +8,7 @@ import {
 
 import SpotifyAuthModuleAndroid from '../nativeModules/SpotifyAuthModuleAndroid'
 import { NativeModules } from 'react-native';
-var SpotifyAuth = NativeModules.SpotifyAuth;
+var SuperAuth = NativeModules.SuperAuth;
 
 
 import { styles } from './Styles'
@@ -29,17 +29,7 @@ export default class ComponentAuthorization extends Component {
 
   startAuthProcess() {
     if (this.props.platform === 'ios') {
-      SpotifyAuth.setClientID(
-        '43b53c4974ed4d6c92fc20c3fa3e4c59',
-        'superduperapp://callback',
-        ['streaming'],
-        (error) => {
-          if (error) {
-
-          } else {
-
-          }
-        })
+      SuperAuth.addEvent('test test test!!!!!!')
     }
 
     if (this.props.platform === 'android') {

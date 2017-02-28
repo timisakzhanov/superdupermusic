@@ -11,17 +11,6 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-//#import <React/RCTBridgeModule.h>
-// #import "RCTBridgeModule.h"
-
-//@interface AppDelegate () <RCTBridgeModule>
-@interface AppDelegate ()
-
-//  @property (nonatomic, strong) SPTAuth *auth;
-//  @property (nonatomic, strong) SPTAudioStreamingController *player;
-//  @property (nonatomic, strong) UIViewController *authViewController;
-
-@end
 
 
 @implementation AppDelegate
@@ -46,16 +35,35 @@
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   
-//  [self initializeSpotify];
-  
-  // Uncomment to start Spotify authentication on app launch
-//  dispatch_async(dispatch_get_main_queue(), ^{
-//    [self startAuthenticationFlow];
-//  });
-  
-  
   return YES;
 }
+
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary *)options
+{
+  // If the incoming url is what we expect we handle it
+  if ([[url scheme] isEqualToString:@"superduperapp"]) {
+    // Close the authentication window
+    
+    NSString * callback = [url absoluteString];
+    NSLog(@"URL path: %@", callback);
+   
+    NSRange start = [callback rangeOfString:@"access_token="];
+    NSRange end = [callback rangeOfString:@"&token_type"];
+    NSRange tokenRange = NSMakeRange(start.location + start.length, end.location - (start.location + start.length));
+    NSString * token = [callback substringWithRange:tokenRange];
+    
+    NSLog(@"Token: %@", token);
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SpotifyAuth" object:nil];
+    
+    return YES;
+  }
+  return NO;
+}
+
+@end
 
 //- (void)initializeSpotify
 //{
@@ -144,4 +152,3 @@
 //    }];
 //  }
 
-@end
