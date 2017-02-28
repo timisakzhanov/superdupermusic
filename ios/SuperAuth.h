@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <React/RCTBridgeModule.h>
 
-
-
 @interface SuperAuth : NSObject <RCTBridgeModule>
 
 @end
