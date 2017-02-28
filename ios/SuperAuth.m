@@ -12,6 +12,8 @@
 #import <SpotifyAuthentication/SpotifyAuthentication.h>
 #import <SpotifyAudioPlayback/SpotifyAudioPlayback.h>
 #import <SafariServices/SafariServices.h>
+#import <React/RCTBridge.h>
+#import <React/RCTEventDispatcher.h>
 
 @interface SuperAuth ()
 
@@ -22,6 +24,8 @@
 @end
 
 @implementation SuperAuth
+
+@synthesize bridge = _bridge;
 
 RCT_EXPORT_MODULE();
 
@@ -76,8 +80,17 @@ RCT_EXPORT_METHOD(addEvent:(NSString *)name)
   if ([notification.name isEqualToString:@"SpotifyAuth"])
   {
     [self.authViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    self.authViewController = nil;    
+    self.authViewController = nil;
+    
+    NSString *accessToken = notification.userInfo[@"accessToken"];
+    [self.bridge.eventDispatcher sendAppEventWithName:@"EventReminder"
+                                                 body:@{@"accessToken": accessToken}];
   }
+}
+
+- (void)dealloc {
+  
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
