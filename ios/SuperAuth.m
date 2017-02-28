@@ -14,12 +14,14 @@
 #import <SafariServices/SafariServices.h>
 #import <React/RCTBridge.h>
 #import <React/RCTEventDispatcher.h>
+#import <React/RCTUtils.h>
 
 @interface SuperAuth ()
 
 @property (nonatomic, strong) SPTAuth *auth;
 @property (nonatomic, strong) SPTAudioStreamingController *player;
 @property (nonatomic, strong) UIViewController *authViewController;
+@property (strong) RCTResponseSenderBlock fetchTokenCallback;
 
 @end
 
@@ -38,9 +40,11 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(addEvent:(NSString *)name)
+RCT_EXPORT_METHOD(fetchToken:(RCTResponseSenderBlock)callback)
 {
-  NSLog(@"Pretending to create an event %@", name);
+  self.fetchTokenCallback = callback;
+  
+  // NSLog(@"Pretending to create an event %@", name);
   
   self.auth = [SPTAuth defaultInstance];
   self.player = [SPTAudioStreamingController sharedInstance];
@@ -89,11 +93,23 @@ RCT_EXPORT_METHOD(addEvent:(NSString *)name)
     [self.authViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     self.authViewController = nil;
     
-    NSString *accessToken = notification.userInfo[@"accessToken"];
-    if (accessToken) {
-      [self.bridge.eventDispatcher sendAppEventWithName:@"EventReminder"
-                                                   body:@{@"accessToken": accessToken}];
+    AppDelegate *appDelegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
+    if (appDelegate.spotifyToken == nil) {
+      NSDictionary *error = RCTMakeError(@"There is no spotify token.", nil, nil);
+      self.fetchTokenCallback(@[error, [NSNull null]]);
+    } else {
+      self.fetchTokenCallback(@[[NSNull null], appDelegate.spotifyToken]);
     }
+
+    self.fetchTokenCallback = nil;
+    
+//    
+//    
+//    NSString *accessToken = notification.userInfo[@"accessToken"];
+//    if (accessToken) {
+//      [self.bridge.eventDispatcher sendAppEventWithName:@"EventReminder"
+//                                                   body:@{@"accessToken": accessToken}];
+//    }
   }
 }
 

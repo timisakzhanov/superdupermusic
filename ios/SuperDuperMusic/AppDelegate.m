@@ -51,10 +51,9 @@
     NSRange tokenRange = NSMakeRange(start.location + start.length, end.location - (start.location + start.length));
     NSString * token = [callback substringWithRange:tokenRange];
     
-    NSLog(@"Token: %@", token);
-    
-    NSDictionary * userInfo = @{@"accessToken": token};
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"SpotifyAuth" object:nil userInfo:userInfo];
+    self.spotifyToken = token;
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SpotifyAuth" object:nil];
     
     return YES;
   }

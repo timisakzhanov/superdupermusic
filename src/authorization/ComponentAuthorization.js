@@ -15,11 +15,6 @@ var SuperAuth = NativeModules.SuperAuth;
 
 import { styles } from './Styles'
 
-var subscription = NativeAppEventEmitter.addListener(
-  'EventReminder',
-  (reminder) => console.log("token: " + reminder.accessToken)
-);
-
 export default class ComponentAuthorization extends Component {
   render() {
 
@@ -35,12 +30,20 @@ export default class ComponentAuthorization extends Component {
   }
 
   componentWillUnmount() {
-    subscription.remove()
   }
 
   startAuthProcess() {
     if (this.props.platform === 'ios') {
-      SuperAuth.addEvent('test test test!!!!!!')
+      SuperAuth.fetchToken((error, token) => {
+        if (error) {
+          this.props.onAuthError("Failed to login")
+        }
+        if (token) {
+          this.props.onTokenReceived(token)
+          AsyncStorage.setItem('authToken', token)
+            .then(() => this.props.onAuthComplited())
+        }
+      })
     }
 
     if (this.props.platform === 'android') {
