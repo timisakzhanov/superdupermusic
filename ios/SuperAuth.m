@@ -27,6 +27,15 @@
 
 @synthesize bridge = _bridge;
 
+- (instancetype)init {
+  
+  self = [super init];
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissAuthViewController:) name:@"SpotifyAuth" object:nil];
+  
+  return self;
+}
+
 RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(addEvent:(NSString *)name)
@@ -56,8 +65,6 @@ RCT_EXPORT_METHOD(addEvent:(NSString *)name)
   dispatch_async(dispatch_get_main_queue(), ^{
     [self startAuthenticationFlow];
   });
-  
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissAuthViewController:) name:@"SpotifyAuth" object:nil];
 }
 
 - (void)startAuthenticationFlow
@@ -83,8 +90,10 @@ RCT_EXPORT_METHOD(addEvent:(NSString *)name)
     self.authViewController = nil;
     
     NSString *accessToken = notification.userInfo[@"accessToken"];
-    [self.bridge.eventDispatcher sendAppEventWithName:@"EventReminder"
-                                                 body:@{@"accessToken": accessToken}];
+    if (accessToken) {
+      [self.bridge.eventDispatcher sendAppEventWithName:@"EventReminder"
+                                                   body:@{@"accessToken": accessToken}];
+    }
   }
 }
 

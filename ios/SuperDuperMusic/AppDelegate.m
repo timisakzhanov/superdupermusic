@@ -54,7 +54,7 @@
     NSLog(@"Token: %@", token);
     
     NSDictionary * userInfo = @{@"accessToken": token};
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"SpotifyAuth" object:userInfo];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SpotifyAuth" object:nil userInfo:userInfo];
     
     return YES;
   }

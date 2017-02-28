@@ -1,10 +1,12 @@
 import React, { Component, PropTypes } from 'react'
 import {
+  NativeAppEventEmitter,
   AsyncStorage,
   View,
   Text,
   Image,
 } from 'react-native'
+
 
 import SpotifyAuthModuleAndroid from '../nativeModules/SpotifyAuthModuleAndroid'
 import { NativeModules } from 'react-native';
@@ -12,6 +14,11 @@ var SuperAuth = NativeModules.SuperAuth;
 
 
 import { styles } from './Styles'
+
+var subscription = NativeAppEventEmitter.addListener(
+  'EventReminder',
+  (reminder) => console.log("token: " + reminder.accessToken)
+);
 
 export default class ComponentAuthorization extends Component {
   render() {
@@ -25,6 +32,10 @@ export default class ComponentAuthorization extends Component {
         {this.displayError()}
       </View>
     )
+  }
+
+  componentWillUnmount() {
+    subscription.remove()
   }
 
   startAuthProcess() {
