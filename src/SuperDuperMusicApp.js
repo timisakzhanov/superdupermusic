@@ -109,7 +109,9 @@ export default class SuperDuperMusicApp extends Component {
   }
 
   logout() {
-    SpotifyAuthModuleAndroid.logOut()
+    if (this.props.platform === 'android') {
+      SpotifyAuthModuleAndroid.logOut()
+    }
     AsyncStorage.removeItem('authToken')
       .then(() => {
         store.dispatch(setToken(''))
