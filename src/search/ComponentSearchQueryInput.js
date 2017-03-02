@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     marginRight: 30,
     marginBottom: 100,
     fontSize: 20,
+    height: 60,
     color: '#ea2859',
     alignSelf: 'stretch',
     textAlign: 'center',
