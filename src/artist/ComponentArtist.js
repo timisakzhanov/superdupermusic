@@ -15,7 +15,7 @@ import { styles } from './Styles'
 export default class ComponentArtist extends Component {
   constructor(props) {
     super(props)
-    this.props.onArtistScreenCreated(this.props.token)
+    this.props.onArtistScreenCreated(this.props.token, this.props.platform)
   }
 
   render() {
@@ -41,13 +41,14 @@ export default class ComponentArtist extends Component {
   }
 
   performBackPress() {
-    this.props.onDestroyPlayer()
+    this.props.onDestroyPlayer(this.props.platform)
     this.props.onBackPress()
   }
 }
 
 ComponentArtist.propTypes = {
   token: PropTypes.string.isRequired,
+  platform: PropTypes.string.isRequired,
   onBackPress: PropTypes.func.isRequired,
   onArtistScreenCreated: PropTypes.func.isRequired,
   onDestroyPlayer: PropTypes.func.isRequired,

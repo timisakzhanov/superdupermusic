@@ -5,17 +5,22 @@ import { authPlayer, destroyPlayer } from './ActionsArtist'
 const mapStateToProps = (state) => {
   return {
     token: state.auth.token,
+    platform: state.platform,
   }
 }
 
 const mapDispatchToProps = (dispatch) =>  {
   return {
-    onArtistScreenCreated: (token) => {
-      dispatch(authPlayer(token))
+    onArtistScreenCreated: (token, platform) => {
+      if (platform === 'android') {
+        dispatch(authPlayer(token))
+      }
     },
 
-    onDestroyPlayer: () => {
-      dispatch(destroyPlayer())
+    onDestroyPlayer: (platform) => {
+      if (platform === 'android') {
+        dispatch(destroyPlayer())
+      }
     }
   }
 }

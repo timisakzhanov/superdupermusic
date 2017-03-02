@@ -8,10 +8,11 @@ import {
 
 export default class ComponentArtistInfo extends Component {
   render() {
-    console.log(this.props.images[0].url)
+    let thumb = this.props.images && this.props.images.length > 0 ? this.props.images[0].url : null
+
     return (
       <View style={ styles.container }>
-        <Image source={{uri: this.props.images[0].url }} style={ styles.image } />
+        <Image source={{uri: thumb }} style={ styles.image } />
         <Text style={ styles.name }>{this.props.name}</Text>
         <Text style={ styles.genre}>{this.prepareGenres()}</Text>
       </View>
