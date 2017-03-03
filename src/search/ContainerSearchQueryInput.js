@@ -4,13 +4,15 @@ import ComponentSearchQueryInput from './ComponentSearchQueryInput'
 
 
 const mapStateToProps = (state) => {
-  return {}
+  return {
+    query: state.query
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSearchClick: (query = '') => {
-      dispatch(updateSearchQuery(query))
+    onQueryInputChange: (text) => {
+      dispatch(updateSearchQuery(text))
     }
   }
 }

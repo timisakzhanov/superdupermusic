@@ -22,9 +22,7 @@ export default class ComponentSearchQueryInput extends Component {
           placeholder={this.props.placeholder}
           placeholderTextColor='#ea2859'
           underlineColorAndroid='#ea2859'
-          onChangeText={(text)=> {
-            this.query = text
-          }} />
+          onChangeText={this.props.onQueryInputChange} />
 
           <Text style={ styles.search_btn } onPress={()=>{this.search()}} underlayColor="#f5a2b7">Search</Text>
         </View>
@@ -32,10 +30,7 @@ export default class ComponentSearchQueryInput extends Component {
   }
 
   search() {
-    console.log("search")
-    if (this.query != null && this.query !== '') {
-
-      this.props.onSearchClick(this.query),
+    if (this.props.query != null && this.props.query !== '') {
       this.props.onRouteUpdated()
     } else {
       //ask user to fill input
@@ -88,7 +83,8 @@ const styles = StyleSheet.create({
 })
 
 ComponentSearchQueryInput.propTypes = {
+  query: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-  onSearchClick: PropTypes.func.isRequired,
+  onQueryInputChange: PropTypes.func.isRequired,
   onRouteUpdated: PropTypes.func.isRequired
 }
