@@ -5,6 +5,7 @@ import {
   View,
   Text,
   Image,
+  TouchableHighlight,
 } from 'react-native'
 
 
@@ -74,7 +75,10 @@ class ComponentAuthContainer extends Component {
         <Text style={styles.text}>
           Get instant access to millions of songs - from old favorites to the latest hits.
         </Text>
-        <Text style={styles.button} onPress={()=>this.props.startAuthProcess()}>Log in</Text>
+        
+        <TouchableHighlight style={ styles.button_container } onPress={this.props.startAuthProcess} underlayColor="#f5a2b7">
+          <Text style={styles.button}>Log in</Text>
+        </TouchableHighlight>
       </View>
     )
   }

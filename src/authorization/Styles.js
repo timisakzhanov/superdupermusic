@@ -37,18 +37,21 @@ export const styles = StyleSheet.create({
     marginRight: 30,
     marginBottom: 45
   },
-  button: {
+  button_container: {
     marginLeft: 30,
     marginRight: 30,
     marginBottom: 50,
     paddingTop: 15,
     paddingBottom: 15,
     borderRadius:50,
+    alignSelf: 'stretch',
+    backgroundColor: '#ff245a',
+  },
+  button: {
     fontSize: 24,
     color: '#ffffff',
-    alignSelf: 'stretch',
     textAlign: 'center',
-    backgroundColor: '#ff245a',
+    backgroundColor: 'transparent'
   },
   error: {
     position: 'absolute',

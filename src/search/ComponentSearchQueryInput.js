@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     search_btn_text: {
     fontSize: 24,
     color: '#ffffff',
+    backgroundColor: 'transparent',
     textAlign: 'center',
 
   },
