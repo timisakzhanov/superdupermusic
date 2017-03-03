@@ -24,7 +24,7 @@ export default class ComponentSearchQueryInput extends Component {
           underlineColorAndroid='#ea2859'
           onChangeText={this.props.onQueryInputChange} />
 
-          <Text style={ styles.search_btn } onPress={()=>{this.search()}} underlayColor="#f5a2b7">Search</Text>
+          <Text style={ styles.search_btn } onPress={this.search.bind(this)} underlayColor="#f5a2b7">Search</Text>
         </View>
     )
   }
