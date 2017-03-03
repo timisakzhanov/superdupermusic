@@ -25,7 +25,7 @@ export default class ComponentArtist extends Component {
 
         <View style={styles.navigation_bar}>
           <View style={styles.left_region} >
-            <TouchableHighlight onPress={()=>this.performBackPress()} style={styles.back_btn_container} underlayColor="#f5a2b7">
+            <TouchableHighlight onPress={this.performBackPress.bind(this)} style={styles.back_btn_container} underlayColor="#f5a2b7">
               <Image source={require('../res/img/arrow_back.png')} style={styles.back_btn} />
             </TouchableHighlight>
           </View>
