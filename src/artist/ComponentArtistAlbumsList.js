@@ -126,6 +126,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 14,
     color: '#ffffff',
+    backgroundColor: 'transparent',
     marginTop: 10
   },
   notification: {

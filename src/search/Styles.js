@@ -23,6 +23,7 @@ export const styles = StyleSheet.create({
   },
   logout: {
     color: '#ffffff',
+    backgroundColor: 'transparent',
     fontSize: 16,
     textAlign: 'right',
     marginTop: 12,

@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     marginBottom: 50,
     fontSize: 18,
     color: '#ffffff',
+    backgroundColor: 'transparent',
     alignSelf: 'stretch',
     textAlign: 'center',
   }

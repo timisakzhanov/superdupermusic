@@ -47,12 +47,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#ffffff',
+    backgroundColor: 'transparent',
     marginTop: 20,
   },
 
   genre: {
     marginTop: 8,
-    color: '#ea2859'
+    color: '#ea2859',
+    backgroundColor: 'transparent',
   }
 });
 

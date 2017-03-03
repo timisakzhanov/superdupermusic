@@ -29,6 +29,7 @@ export const styles = StyleSheet.create({
   },
   text: {
     color: '#ffffff',
+    backgroundColor: 'transparent',
     fontSize: 18,
     lineHeight: 30,
     alignSelf: 'stretch',
