@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     height: 70,
     width: 70,
     marginTop: 30,
-    resizeMode: 'center'
+    resizeMode: 'contain'
   },
   logout: {
     color: '#ffffff',
