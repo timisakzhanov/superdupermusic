@@ -24,7 +24,9 @@ export default class ComponentSearchQueryInput extends Component {
           underlineColorAndroid='#ea2859'
           onChangeText={this.props.onQueryInputChange} />
 
-          <Text style={ styles.search_btn } onPress={this.search.bind(this)} underlayColor="#f5a2b7">Search</Text>
+          <TouchableHighlight style={ styles.search_btn } onPress={this.search.bind(this)} underlayColor="#f5a2b7">
+            <Text style={ styles.search_btn_text }>Search</Text>
+          </TouchableHighlight>
         </View>
     )
   }
@@ -55,11 +57,14 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingBottom: 15,
     borderRadius:50,
+    alignSelf: 'stretch',
+    backgroundColor: '#ff245a',
+  },
+    search_btn_text: {
     fontSize: 24,
     color: '#ffffff',
-    alignSelf: 'stretch',
     textAlign: 'center',
-    backgroundColor: '#ff245a',
+
   },
   input: {
     marginLeft: 30,
