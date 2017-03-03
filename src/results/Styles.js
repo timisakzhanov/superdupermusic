@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
   back_btn_container: {
     width: 45,
     height: 45,
+    borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
     marginLeft: 8,
