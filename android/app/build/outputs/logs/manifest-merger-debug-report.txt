@@ -21,25 +21,25 @@ ADDED from /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/and
 		ADDED from /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/src/main/AndroidManifest.xml:6:22-64
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
 ADDED from /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/src/main/AndroidManifest.xml:7:5-77
-MERGED from [com.facebook.react:react-native:0.41.2] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.41.2/AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.41.2] /Users/tim_isakjanov/.android/build-cache/8078ffeff3ef5535c607b3d4f56caeaaacaefdf9/output/AndroidManifest.xml:11:5-78
 	android:name
 		ADDED from /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/src/main/AndroidManifest.xml:7:22-75
 uses-sdk
 ADDED from /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/src/main/AndroidManifest.xml:9:5-11:41
-MERGED from [com.facebook.react:react-native:0.41.2] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.41.2/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:23.4.0] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/AndroidManifest.xml:20:5-43
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/AndroidManifest.xml:14:5-16:41
-MERGED from [com.facebook.fresco:fresco:0.11.0] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.11.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:0.11.0] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.11.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:0.11.0] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/0.11.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:0.11.0] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.11.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:0.11.0] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.11.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-v4:23.4.0] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
-MERGED from [com.facebook.fresco:fbcore:0.11.0] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/AndroidManifest.xml:2:3-70
-MERGED from [com.spotify.sdk:spotify-auth-1.0.0-beta12:] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.spotify.sdk/spotify-auth-1.0.0-beta12/AndroidManifest.xml:26:5-28:41
-MERGED from [com.spotify.sdk:spotify-player:beta21-noconnect-2.18c] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.spotify.sdk/spotify-player/beta21-noconnect-2.18c/AndroidManifest.xml:26:5-28:41
+MERGED from [com.facebook.react:react-native:0.41.2] /Users/tim_isakjanov/.android/build-cache/8078ffeff3ef5535c607b3d4f56caeaaacaefdf9/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/tim_isakjanov/.android/build-cache/eb63377957077796251865517f51ebd04b6a91d7/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.4.0] /Users/tim_isakjanov/.android/build-cache/c691de553b3be782d678b5773d15435f8d76aad0/output/AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/tim_isakjanov/.android/build-cache/69a135a71dd23d3147afbfe71d5ef904d27246b3/output/AndroidManifest.xml:14:5-16:41
+MERGED from [com.facebook.fresco:fresco:0.11.0] /Users/tim_isakjanov/.android/build-cache/e2b53459da3d700282df9c2d424de73da01ef6e3/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:0.11.0] /Users/tim_isakjanov/.android/build-cache/aebb649fdb631838bbe20ab0dbe9cdd8fe0c971b/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:0.11.0] /Users/tim_isakjanov/.android/build-cache/6c5d90cf30a1cf629252f472ac633e5363d8ac7c/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:0.11.0] /Users/tim_isakjanov/.android/build-cache/e85ea402c2f9e692b9957232af949bbd990b6882/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:0.11.0] /Users/tim_isakjanov/.android/build-cache/6853d0293b480edf2cc548b67db108ac15b35df7/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.4.0] /Users/tim_isakjanov/.android/build-cache/4a7d8c618a1964ec0394a1785ffa8f1967735f2a/output/AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.11.0] /Users/tim_isakjanov/.android/build-cache/125a07cab8fc2cf35854c7723f992ea9103700ac/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/tim_isakjanov/.android/build-cache/6f694c42fd9ad5b72966d1c1bcce24db1f1c2015/output/AndroidManifest.xml:2:3-70
+MERGED from [com.spotify.sdk:spotify-auth-1.0.0-beta12:] /Users/tim_isakjanov/.android/build-cache/180344728ea8c8974316fcdd627872353b681b8f/output/AndroidManifest.xml:26:5-28:41
+MERGED from [com.spotify.sdk:spotify-player:beta21-noconnect-2.18c] /Users/tim_isakjanov/.android/build-cache/fcbb1f5c89b1cfb2bb9a6adba9f1f484dcacd458/output/AndroidManifest.xml:26:5-28:41
 	android:targetSdkVersion
 		ADDED from /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/src/main/AndroidManifest.xml:11:9-38
 		INJECTED from /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/src/main/AndroidManifest.xml
@@ -50,13 +50,13 @@ MERGED from [com.spotify.sdk:spotify-player:beta21-noconnect-2.18c] /Users/tim_i
 		INJECTED from /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/src/main/AndroidManifest.xml
 application
 ADDED from /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/src/main/AndroidManifest.xml:13:5-35:19
-MERGED from [com.facebook.react:react-native:0.41.2] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.41.2/AndroidManifest.xml:13:5-20
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.4.0] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
-MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/AndroidManifest.xml:3:3-17
-MERGED from [org.webkit:android-jsc:r174650] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/org.webkit/android-jsc/r174650/AndroidManifest.xml:2:3-17
-MERGED from [com.spotify.sdk:spotify-auth-1.0.0-beta12:] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.spotify.sdk/spotify-auth-1.0.0-beta12/AndroidManifest.xml:30:5-20
-MERGED from [com.spotify.sdk:spotify-player:beta21-noconnect-2.18c] /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/build/intermediates/exploded-aar/com.spotify.sdk/spotify-player/beta21-noconnect-2.18c/AndroidManifest.xml:30:5-20
+MERGED from [com.facebook.react:react-native:0.41.2] /Users/tim_isakjanov/.android/build-cache/8078ffeff3ef5535c607b3d4f56caeaaacaefdf9/output/AndroidManifest.xml:13:5-20
+MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/tim_isakjanov/.android/build-cache/eb63377957077796251865517f51ebd04b6a91d7/output/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.4.0] /Users/tim_isakjanov/.android/build-cache/4a7d8c618a1964ec0394a1785ffa8f1967735f2a/output/AndroidManifest.xml:22:5-20
+MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/tim_isakjanov/.android/build-cache/6f694c42fd9ad5b72966d1c1bcce24db1f1c2015/output/AndroidManifest.xml:3:3-17
+MERGED from [org.webkit:android-jsc:r174650] /Users/tim_isakjanov/.android/build-cache/7dd68ff2110177a9c3cae5fc0e143584aeb9c4e9/output/AndroidManifest.xml:2:3-17
+MERGED from [com.spotify.sdk:spotify-auth-1.0.0-beta12:] /Users/tim_isakjanov/.android/build-cache/180344728ea8c8974316fcdd627872353b681b8f/output/AndroidManifest.xml:30:5-20
+MERGED from [com.spotify.sdk:spotify-player:beta21-noconnect-2.18c] /Users/tim_isakjanov/.android/build-cache/fcbb1f5c89b1cfb2bb9a6adba9f1f484dcacd458/output/AndroidManifest.xml:30:5-20
 	android:label
 		ADDED from /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/src/main/AndroidManifest.xml:16:7-39
 	android:allowBackup
@@ -97,9 +97,9 @@ ADDED from /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/and
 		ADDED from /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/src/main/AndroidManifest.xml:33:9-68
 	android:name
 		ADDED from /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/src/main/AndroidManifest.xml:32:9-76
-android:uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 IMPLIED from /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/src/main/AndroidManifest.xml:1:1-37:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
-android:uses-permission#android.permission.READ_PHONE_STATE
+uses-permission#android.permission.READ_PHONE_STATE
 IMPLIED from /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/src/main/AndroidManifest.xml:1:1-37:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
-android:uses-permission#android.permission.READ_EXTERNAL_STORAGE
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
 IMPLIED from /Users/tim_isakjanov/Projects/zensoft/reactnative/SuperDuperMusic/android/app/src/main/AndroidManifest.xml:1:1-37:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
