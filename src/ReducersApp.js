@@ -16,15 +16,7 @@ const platform = ( state = '', action) => {
   }
 }
 
-const AppNavigator = StackNavigator(AppRouteConfigs);
-
-const navReducer = (state, action) => {
-  const newState = AppNavigator.router.getStateForAction(action, state);
-  return newState || state;
-};
-
 const rootReducer = combineReducers({
-  nav: navReducer,
   platform,
   auth,
   query,
