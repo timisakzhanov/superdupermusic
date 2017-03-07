@@ -1,4 +1,7 @@
 import { combineReducers } from 'redux'
+import { StackNavigator } from 'react-navigation';
+
+
 import query from './search/ReducersSearch'
 import artists from './results/ReducersResults'
 import artist from './artist/ReducersArtist'
@@ -13,7 +16,15 @@ const platform = ( state = '', action) => {
   }
 }
 
+const AppNavigator = StackNavigator(AppRouteConfigs);
+
+const navReducer = (state, action) => {
+  const newState = AppNavigator.router.getStateForAction(action, state);
+  return newState || state;
+};
+
 const rootReducer = combineReducers({
+  nav: navReducer,
   platform,
   auth,
   query,
